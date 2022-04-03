@@ -11,7 +11,7 @@ const menuData = {
     ],
     price_simple: 9,
     price_double: 10,
-    img: "./assets/images/glitchs_burgers/32_bits_giphy.gif"
+    img: "./assets/images/glitchs_burgers/classic_cheese.png"
   },
   {
     burger_names: "Classic Cheese Super",
@@ -26,7 +26,7 @@ const menuData = {
     ],
     price_simple: 9.5,
     price_double: 10.5,
-    img: "./assets/images/Burgers png/Classic_cheese_super-removebg.png"
+    img: "./assets/images/glitchs_burgers/Classic_cheese_super-removebg.png"
   },
   {
     burger_names: "Classic Cheese God",
@@ -41,7 +41,7 @@ const menuData = {
     ],
     price_simple: 10,
     price_double: 11,
-    img: "./assets/images/glitchs_burgers/Cheese_god_giphy.gif"
+    img: "./assets/images/glitchs_burgers/Cheese_god-removebg.png"
   },
   {
     burger_names: "32 Bits.",
@@ -55,7 +55,7 @@ const menuData = {
     ],
     price_simple: 10,
     price_double: 11,
-    img: "./assets/images/glitchs_burgers/32_bits_giphy.gif"
+    img: "./assets/images/glitchs_burgers/32_bit_burger-removebg.png"
   },
   {
     burger_names: "32 Bits. Super",
@@ -70,7 +70,7 @@ const menuData = {
     ],
     price_simple: 10.5,
     price_double: 11.5,
-    img: "./assets/images/glitchs_burgers/32_Bits_Super_giphy.gif"
+    img: "./assets/images/glitchs_burgers/32_Bits_super.png"
   },
   {
     burger_names: "32 Bits. God",
@@ -85,7 +85,7 @@ const menuData = {
     ],
     price_simple: 10.8,
     price_double: 11.8,
-    img: "./assets/images/glitchs_burgers/32_Bits_god_giphy.gif"
+    img: "./assets/images/glitchs_burgers/32_Bits_God-removebg.png"
   },
   {
     burger_names: "Veggie Namek",
@@ -99,7 +99,7 @@ const menuData = {
       "Sauce saiya-jin"
     ],
     price_simple: 10.5,
-    img: "./assets/images/glitch_burger_mobile/Veggiie_namek.png"
+    img: "./assets/images/glitchs_burgers/Veggiie_namek.png"
   }
   ],
   sides: [{
