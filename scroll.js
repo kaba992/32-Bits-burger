@@ -101,5 +101,5 @@
   });
   section_wrapper.addEventListener('wheel', _scrollY);
   _swipe(section_wrapper);
- 
+
 })();

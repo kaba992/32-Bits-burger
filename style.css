@@ -3,7 +3,8 @@
 :root {
   --primary-color: #FCFDFD;
   --secondary-color: #539fcd;
-  --bg-color: #343232;
+  --tertiary-color: #06c167;
+  --bg-color: #000000;
   --button-color: #FCFDFD;
   --h1-color: #FCFDFD;
   --breakpoint-xs: 0px;
@@ -21,22 +22,19 @@
 body {
   color: #fff;
   background-color: var(--bg-color);
-  -ms-overflow-style: none;
+  /* -ms-overflow-style: none; */
   font-family: 'Inter', sans-serif;
-  /* for Internet Explorer, Edge */
-  scrollbar-width: none;
-  /* for Firefox */
-  overflow: hidden;
+  /* scrollbar-width: none; */
+  /* overflow: hidden; */
 }
 
 body::-webkit-scrollbar {
   display: none;
-  /* for Chrome, Safari, and Opera */
 }
 
 p {
   font-family: 'Inter', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   letter-spacing: 0.1rem;
   color: #fff;
@@ -54,13 +52,28 @@ ul {
   list-style: none;
 }
 
+img, svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-wrapper {
+  max-width: 150px;
+  max-height: 150px;
+  width: 100%;
+}
+
 /* NAVBAR */
 header {
-  position: fixed;
+  /* margin-top: 50px; */
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
   top: 0;
-  left: 0;
   z-index: 1001;
   width: 100%;
+  height: 10vh;
 }
 
 #navbar {
@@ -90,18 +103,6 @@ header {
   color: #fff;
 }
 
-@media screen and (min-width: 768px) {
-  .navbar_list {
-    display: flex;
-  }
-
-  .logo img {
-    width: 120px;
-  }
-}
-
-
-
 /* BURGER ICON */
 .burger_menu {
   display: flex;
@@ -118,16 +119,7 @@ header {
   margin: 5px;
 }
 
-@media screen and (min-width: 768px) {
-  .burger_menu {
-    display: none;
-  }
-}
-
-
-
 /* MOBILE MENU */
-
 .mobile_menu {
   display: none;
   position: fixed;
@@ -166,83 +158,45 @@ header {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(18deg) brightness(104%) contrast(104%);
 }
 
+
+
+/* SECTION */
+.section_wrapper {
+  position: relative;
+  /* margin-top: 10vh; */
+  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+  height: 90vh;
+}
+
+section.section {
+  position: relative;
+  width: 100vw;
+  height: inherit;
+}
+
+/* SECTION HOME */
 #home {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100vw;
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0)), url("/assets/images/background.jpg") no-repeat center center/ cover;
 }
 
-@media screen and (max-width: 480px) {
-  #home {
-    background: url("/assets/images/background_phone.jpg") no-repeat center center/ contain;
-  }
-
-  svg {
-    width: 20em;
-  }
-
-  .svg-content {
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  #fp-nav ul li a span, .fp-slidesNav ul li a span {
-    height: 4px !important;
-    width: 4px !important;
-    background: rgb(255, 255, 255) !important;
-    margin: -2px 0 0 -2px !important;
-  }
-
-  #fp-nav.fp-right {
-    right: 2px;
-  }
-}
-
 .svg-container {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.svg-content {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-/* SECTION */
-.section_wrapper {
-  position: relative;
-  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
-}
-
-section.section {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
+  width: 250px;
+  height: auto;
 }
 
 /* SECTION MENU */
-
-
 #menu {
   display: grid;
-  grid-template-columns: 300px 1fr 2fr;
-  grid-template-rows: 1fr;
-  grid-template-areas: ". banner burger";
-  justify-items: center;
-  align-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "banner"
+    "burger";
 }
 
 .banner {
@@ -251,11 +205,11 @@ section.section {
   flex-direction: column;
   align-items: center;
   grid-area: banner;
-  padding: 50px 15px;
+  /* padding: 50px 15px; */
   height: 100%;
-  max-width: 600px;
-  background-color: var(--secondary-color);
-  overflow: hidden;
+  /* max-width: 600px; */
+  background: #000000;
+  /* overflow: hidden; */
 }
 
 .banner_content {
@@ -265,11 +219,9 @@ section.section {
   align-items: center;
 }
 
-
-
 .burger_title {
   font-family: 'VT323', monospace;
-  font-size: 5vw;
+  font-size: 8vw;
   text-align: center;
 }
 
@@ -278,12 +230,11 @@ section.section {
   flex-wrap: wrap;
   gap: 1rem 0;
   align-items: center;
-  margin: 3rem 0;
 }
 
 .burger_description_item {
   font-family: 'inter', sans-serif;
-  font-size: 1.5vw;
+  font-size: 3.5vw;
   text-align: center;
   line-height: 1.5;
   letter-spacing: 0.1rem;
@@ -295,11 +246,12 @@ section.section {
   justify-content: center;
   align-items: baseline;
   gap: 0 3rem;
+  margin-top: 2em;
 }
 
 .price {
   text-align: center;
-  font-size: 3vw;
+  font-size: 7vw;
   font-family: 'VT323', monospace;
   line-height: 1;
 }
@@ -308,14 +260,19 @@ section.section {
   padding: 10px 20px;
   border-radius: 8px;
   font-size: 2vw;
-  background-color: var(--bg-color);
+  margin-bottom: 2em;
+  background: #333333;
+}
 
+.btn-uber-eat>span {
+  color: var(--tertiary-color);
 }
 
 .btn-uber-eat:hover {
-  background-color: var(--secondary-color);
+  background: #333333;
+  box-shadow: inset 20px 20px 60px #2b2b2b,
+    inset -20px -20px 60px #3b3b3b;
 }
-
 
 .burger {
   display: flex;
@@ -326,75 +283,146 @@ section.section {
   grid-area: burger;
 }
 
-.burger-img {
-  width: 390px;
-  height: 390px;
-}
-
 .burger-arrow_wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
-  margin: 3rem 0 auto;
+  width: 100%;
+  /* margin-bottom: 3rem; */
+  padding: 0 15px;
 }
 
 .burger-arrow_wrapper i {
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
-@media (min-width: 769px) and (max-width:1024px) {
-  .banner {
-    padding: 500px 15px;
-  }
-
-  .burger_title {
-    font-size: 5vw;
-  }
-
-  .burger_description {
-    gap: 1rem 0;
-    margin: 3rem 0;
-  }
-
-  .burger_description_item {
-    font-size: 1.5vw;
-    line-height: 1.5;
-    letter-spacing: 0.1rem;
-  }
-
-  .banne-price-wrapper {
-    gap: 0 3rem;
-  }
-
-  .price {
-    font-size: 3vw;
-    line-height: 1;
-  }
-
-  .btn-uber-eat {
-    padding: 10px 20px;
-    font-size: 2vw;
-  }
-
-
-  .burger-img {
-    width: 390px;
-    height: 390px;
-  }
-
-  .burger-arrow_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-    margin: 3rem 0 auto;
-  }
-
-  .burger-arrow_wrapper i {
-    font-size: 3rem;
-  }
+/* curseur */
+.lg-cursor .lg-cursor-pointer:nth-child(1):before {
+  margin: -15px 0 0 -15px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 255, 255, 0.25);
 }
+
+.lg-cursor .lg-cursor-pointer:nth-child(2):before {
+  background-color: white;
+}
+
+.lg-cursor .lg-cursor-trail path {
+  stroke-width: 8px;
+}
+
+/* SECTION ABOUT */
+
+#about {
+  background: url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas:
+    "about-content-1"
+    "about-content-2";
+  justify-self: center;
+  align-self: center;
+  padding: 0 15px;
+}
+
+.about-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-content-1 {
+  grid-area: about-content-1;
+}
+
+.about-content-2 {
+  grid-area: about-content-2;
+}
+
+
+/* SECTION CONTACT */
+.contact_content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.horaires {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.réseaux_contact {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.map {
+  flex: 1;
+  height: 100%;
+  /* width: 100%; */
+}
+
+.réseaux_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 2rem;
+  margin: 2em 0;
+}
+
+.réseaux_wrapper a i {
+  font-size: 2.5rem;
+  padding: 0;
+}
+
+
+/* TRANSITION PAGES */
+.cont-bandes {
+  width: 100%;
+  height: 100vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+  position: absolute;
+  pointer-events: none;
+  /* background: #000; */
+  z-index: 500;
+}
+
+.bande {
+  width: 10%;
+  height: 0%;
+}
+
+.bande:nth-child(even) {
+
+  background: url(/assets/images/autres/logo-removebg-preview.png) no-repeat center center /300px 300px, url(/assets/images/autres/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(/assets/images/autres/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
+}
+
+.bande:nth-child(odd) {
+
+  background: url(/assets/images/autres/brique.png) repeat-y top / 100% 100px;
+}
+
+.wipe-transition {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(165, 165, 223), midnightblue);
+  position: absolute;
+  left: -100%;
+}
+
 
 /* ANIMATION CLASS */
 .slide_right {
@@ -416,75 +444,6 @@ section.section {
 
 }
 
-@media (min-width: 320px) and (max-width:480px) {
-  #menu {
-    grid-template-columns: 1fr;
-    grid-template-rows: 5fr 1fr;
-    grid-template-areas:
-      "banner"
-      "burger";
-
-  }
-
-  .banner {
-    padding: 50px 15px;
-  }
-
-  .burger_title {
-    font-size: 2rem;
-  }
-
-  .burger_description {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 0;
-    align-items: center;
-    margin: 1.5rem 0;
-  }
-
-  .banner_content {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .burger_description_item {
-    font-size: 0.8rem;
-    line-height: 1;
-    letter-spacing: 0.1rem;
-  }
-
-  .banne-price-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0 10rem;
-  }
-
-  .price {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .burger-img {
-    width: 300px;
-    height: 250px;
-  }
-
-  .btn-uber-eat {
-    padding: 7px 8px;
-    font-size: 1.5rem;
-  }
-
-  .burger-arrow_wrapper {
-    width: 80%;
-    margin: 0rem 0 1rem;
-  }
-}
-
-
-
 @keyframes slideLeft {
   0% {
     transform: translateX(-100%);
@@ -495,182 +454,6 @@ section.section {
   }
 
 }
-
-/* curseur */
-.lg-cursor .lg-cursor-pointer:nth-child(1):before {
-  margin: -15px 0 0 -15px;
-  width: 30px;
-  height: 30px;
-  background: rgba(0, 255, 255, 0.25);
-}
-
-.lg-cursor .lg-cursor-pointer:nth-child(2):before {
-  background-color: white;
-}
-
-.lg-cursor .lg-cursor-trail path {
-  stroke-width: 8px;
-}
-
-#about {
-  background: url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center/ cover;
-}
-
-.about-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  height: 100vh;
-  width: 100vw;
-}
-
-.spirit1, .spirit2 {
-
-  width: 100%;
-  font-family: "Inter", sans-serif;
-  font-size: 2.5rem;
-  line-height: 2.8rem;
-  /*  */
-  padding: 1em;
-  /* text-align: justify; */
-  word-break: keep-all;
-}
-
-.spirit1 {
-  grid-area: 1 / 1 / 3 / 3;
-  margin-top: 4em;
-
-}
-
-.spirit2 {
-  grid-area: 3 / 3 / 5 / 5;
-  margin-bottom: 2em;
-}
-
-.personnages {
-
-  display: flex;
-  justify-content: space-around;
-}
-
-.personnages img {
-  display: none;
-  width: 100px;
-  height: auto;
-}
-
-@media (min-width: 320px) and (max-width:480px) {
-  .about-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, 1fr);
-  }
-
-  .spirit1, .spirit2 {
-    font-size: 5vw;
-    line-height: 1.6rem;
-    padding: 1em;
-  }
-
-  .spirit1 {
-    grid-area: 1 / 1 / 2 / 2;
-  }
-
-  .spirit2 {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-}
-
-/* Contact */
-
-.contact_content {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 0.4fr 1fr;
-  height: 100%;
-  width: 100%;
-}
-
-.contact_header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  grid-area: 1 / 1 / 2 / 4;
-  padding-top: 2vh;
-  width: 100%;
-  height: 100%;
-}
-
-.horaires {
-  font-size: 4rem;
-}
-
-.réseaux_contact {
-  font-size: 4rem;
-}
-
-.map {
-  height: 100%;
-  width: 100%;
-  grid-area: 3 / 1 / 4 / 4;
-}
-
-.réseaux {
-  grid-area: 2 / 1 / 3 / 4;
-}
-
-
-.réseaux ul {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0;
-  margin: 0;
-  width: 100%
-}
-
-.fab {
-  display: inline-block;
-  font-size: 5rem;
-  padding: 50px;
-}
-
-@media (min-width: 320px) and (max-width:480px) {
-  .contact_header {
-    padding-top: 14vh;
-    text-align: center;
-  }
-
-  .contact_content h3 {
-    font-size: 5vw;
-  }
-
-  .horaires p {
-    font-size: 5vw;
-  }
-
-
-  .réseaux_contact p {
-    align-self: center;
-    font-size: 5vw;
-  }
-
-  .réseaux {
-    grid-area: 2 / 1 / 3 / 4;
-    padding-top: 5vh;
-  }
-
-  .fab {
-    font-size: 2rem;
-    padding: 8px;
-  }
-}
-
-
-
-
 
 @-webkit-keyframes svg-text-anim {
   40% {
@@ -709,40 +492,21 @@ section.section {
 
 }
 
-/* TRANSITION PAGES */
-.cont-bandes {
-  width: 100%;
-  height: 100vh;
-  background: transparent;
-  display: flex;
-  justify-content: center;
-  overflow: hidden;
-  position: absolute;
-  pointer-events: none;
-  /* background: #000; */
-  z-index: 500;
+/* FORMAT MOBILE */
+
+@media screen and (max-width: 480px) {
+  #home {
+    background: url("/assets/images/background_phone.jpg") no-repeat center center / contain;
+  }
 }
 
-.bande {
-  width: 10%;
-  height: 0%;
-}
-
-.bande:nth-child(even) {
-
-  background: url(/assets/images/autres/logo-removebg-preview.png) no-repeat center center /300px 300px, url(/assets/images/autres/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(/assets/images/autres/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
-}
-
-.bande:nth-child(odd) {
-
-  background: url(/assets/images/autres/brique.png) repeat-y top / 100% 100px;
-}
+/* FORMAT TABLET */
+@media (min-width: 481px) and (max-width: 820px) {}
 
 
-.wipe-transition {
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(90deg, rgb(165, 165, 223), midnightblue);
-  position: absolute;
-  left: -100%;
+/* FORMAT DESKTOP */
+@media screen and (min-width: 821px) {
+  .burger_menu {
+    display: none;
+  }
 }
