@@ -8,7 +8,7 @@
     var slength, plength, pan, step = 100,
       vh = window.innerHeight / 100,
       vmin = Math.min(window.innerHeight, window.innerWidth) / 100;
-      console.log(this);
+    console.log(this);
     if ((this !== undefined && this.id === 'section_wrapper') || (obj !== undefined && obj.id === 'section_wrapper')) {
       pan = this || obj;
       plength = parseInt(pan.offsetHeight / vh);
@@ -103,3 +103,35 @@
   _swipe(section_wrapper);
 
 })();
+
+// Scroll Trigger
+gsap.registerPlugin(ScrollTrigger);
+
+
+gsap.to(".banner", {
+  scrollTrigger: {
+    trigger: ".banner",
+    start: "top center",
+    toggleActions: "restart pause reverse pause"
+  },
+  x: -900,
+  duration: 2
+});
+
+gsap.to(".red", {
+  scrollTrigger: {
+    trigger: ".red",
+    toggleActions: "restart pause reverse pause"
+  },
+  duration: 1,
+  backgroundColor: "#FFA500",
+  ease: "none"
+});
+
+gsap.to(".yoyo p", {
+  scrollTrigger: ".yoyo",
+  scale: 2,
+  repeat: -1,
+  yoyo: true,
+  ease: "power2"
+});
