@@ -25,15 +25,9 @@ body {
   /* -ms-overflow-style: none; */
   font-family: 'Inter', sans-serif;
   /* scrollbar-width: none; */
-  /* overflow: hidden; */
-  height: auto;
+  overflow: hidden;
 }
 
-.panel {
-  height: 100vh;
-  position: sticky;
-  top: 0;
-}
 
 body::-webkit-scrollbar {
   display: none;
@@ -286,6 +280,12 @@ section.section {
   line-height: 1;
 }
 
+.pixel_coin img {
+  width: 10%;
+  height: auto;
+  animation: coin 4s alternate-reverse infinite;
+}
+
 .btn-uber-eat {
   padding: 10px 20px;
   border-radius: 8px;
@@ -486,6 +486,16 @@ section.section {
 
 }
 
+@keyframes coin {
+  0% {
+    transform: rotatey(0deg);
+  }
+
+  100% {
+    transform: rotatey(360deg);
+  }
+}
+
 @-webkit-keyframes svg-text-anim {
   40% {
     stroke-dashoffset: 0;
@@ -555,8 +565,8 @@ section.section {
 
   /* MENUS RESPONSIVE */
   .img-wrapper {
-    max-width: 300px;
-    max-height: 250px;
+    max-width: 200px;
+    max-height: 200px;
     width: 100%;
   }
 
@@ -570,7 +580,7 @@ section.section {
   }
 
   .banne-price-wrapper {
-    gap: 0 22rem;
+    gap: 0 6rem;
     margin-top: 2em;
   }
 
@@ -578,33 +588,9 @@ section.section {
     font-size: 7vw;
   }
 
-  .btn-uber-eat {
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 3vw;
-    margin-bottom: 2em;
-    background: #333333;
-  }
 
   .btn-uber-eat>span {
     color: var(--tertiary-color);
-  }
-
-  .burger {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    grid-area: burger;
-  }
-
-  .burger-arrow_wrapper {
-    margin-bottom: 3rem;
-    padding: 0 15px;
-  }
-
-  .burger-arrow_wrapper i {
-    font-size: 4.5rem;
-    padding: 0 40px 0 40px;
   }
 
   /* ABOUT RESPONSIVE */
