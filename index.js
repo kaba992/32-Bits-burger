@@ -9,8 +9,6 @@ const arrow_left = document.querySelector(".fa-arrow-left");
 const arrow_right = document.querySelector(".fa-arrow-right");
 const TLAnim = new TimelineMax();
 
-
-
 let burgers_arr = [];
 burgers_arr = menuData.burgers;
 
@@ -57,15 +55,28 @@ const swipe = (direction) => {
 }
 
 //ANIMATION BURGER MENU
-const burgerIcon = document.querySelector(".burger_menu");
-burgerIcon.addEventListener("click", () => {
-  burgerIcon.classList.toggle("active");
-  document.querySelector(".mobile_menu").classList.toggle("active");
-  TLAnim .fromTo(".mobile_menu.active ", 1.5, { opacity: 0.5, scale: 0.5 },
-  {ease: Elastic.easeOut, opacity: 1, scale: 1 })
-  // ease: Elastic.easeOut,
 
-})
+const hamburger = document.querySelector(".hamburger");
+
+TweenLite.set('.line01', { x: 40 });
+TweenLite.set('.line03', { x: -40 });
+TweenLite.set('.navigation', { xPercent: -50, yPercent: -50 })
+TweenLite.set('.navigation li', { x: -610 });
+
+const hamburgerMotion = new TimelineMax()
+  .to('.line03', 0.4, { x: '-=40' }, 0)
+  .to('.line01', 0.4, { x: '+=40' }, 0)
+  .to('.menu', 0.4, { autoAlpha: 1 }, 0)
+  .staggerTo('.navigation li', 0.4, { x: 0, ease: Sine.easeOut }, 0.2, 0.5)
+  .to('.navigation li', 1, { marginBottom: '40px', ease: Power1.easeOut })
+  .reverse()
+
+hamburger.addEventListener('click', function (e) {
+  hamburgerMotion.reversed(!hamburgerMotion.reversed());
+});
+
+
+
 
 // ANIMATION SVG
 function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeColor, repeat) {
@@ -139,7 +150,4 @@ barba.init({
   }]
 
 })
-// trigger transition on click
-/**
- * Updates links that point to the current page
- */
+// SCROLL TRIGGER ANIMATION
