@@ -123,17 +123,19 @@ header {
 .mobile_menu {
   display: none;
   position: fixed;
-  top: -1000px;
+  clip-path: circle(0.7% at 50% 50%);
   left: 0;
   width: 100vw;
   height: 100vh;
   background: #000;
   z-index: 1000;
+  /* transition: all 0.5s ease-in-out; */
 }
 
 .mobile_menu.active {
   display: block;
   top: 0;
+  clip-path: inset(0 0 0 0);
 }
 
 .mobile_menu_list {
@@ -152,7 +154,9 @@ header {
   color: #fff;
   text-decoration: none;
   font-family: "Inter", sans-serif;
+  width: 100%;
 }
+
 
 .filter-white {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(18deg) brightness(104%) contrast(104%);

@@ -7,6 +7,9 @@ const price_double = document.querySelector(".price-double");
 const burger_img = document.querySelector(".burger-img");
 const arrow_left = document.querySelector(".fa-arrow-left");
 const arrow_right = document.querySelector(".fa-arrow-right");
+const TLAnim = new TimelineMax();
+
+
 
 let burgers_arr = [];
 burgers_arr = menuData.burgers;
@@ -58,6 +61,9 @@ const burgerIcon = document.querySelector(".burger_menu");
 burgerIcon.addEventListener("click", () => {
   burgerIcon.classList.toggle("active");
   document.querySelector(".mobile_menu").classList.toggle("active");
+  TLAnim .fromTo(".mobile_menu.active ", 1.5, { opacity: 0.5, scale: 0.5 },
+  {ease: Elastic.easeOut, opacity: 1, scale: 1 })
+  // ease: Elastic.easeOut,
 
 })
 
@@ -86,7 +92,7 @@ setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
 
 const wipe = document.querySelector('.wipe-transition');
 const allBandes = document.querySelectorAll('.bande');
-const TLAnim = new TimelineMax();
+
 
 function delay(n) {
   return new Promise((done) => {

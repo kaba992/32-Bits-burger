@@ -118,20 +118,8 @@
 //   duration: 2
 // });
 
-// gsap.to(".red", {
-//   scrollTrigger: {
-//     trigger: ".red",
-//     toggleActions: "restart pause reverse pause"
-//   },
-//   duration: 1,
-//   backgroundColor: "#FFA500",
-//   ease: "none"
-// });
+const tl = new TimelineMax();
 
-// gsap.to(".yoyo p", {
-//   scrollTrigger: ".yoyo",
-//   scale: 2,
-//   repeat: -1,
-//   yoyo: true,
-//   ease: "power2"
-// });
+tl.fromTo(".svg-container", 1.5, { y: -600, opacity: 0, scale: 0.5 },
+  {  y: 0, opacity: 1, scale: 1 })
+  // ease: Elastic.easeOut,
