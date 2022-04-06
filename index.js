@@ -23,8 +23,11 @@ function refresh() {
 refresh();
 console.log(burgers_arr[current_index].burger_desc);
 const bannerContent = document.querySelector(".banner_content");
+const bannerItems = document.querySelectorAll(".burger_description_item");
 arrow_left.addEventListener("click", () => {
-  bannerContent.classList.add("slide_right");
+  // bannerContent.classList.add("slide_right");
+  TLAnim.fromTo(bannerItems, 1, { x: "-100%", opacity: 0, scale: 0.5 },
+    { x: 0, opacity: 1, scale: 1 });
   swipe('left')
 });
 arrow_right.addEventListener("click", () => {
