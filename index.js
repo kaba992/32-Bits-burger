@@ -19,6 +19,7 @@ function refresh() {
   price_double.innerHTML = burgers_arr[current_index].price_double || "";
   burger_img.src = burgers_arr[current_index].img;
   burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
+  burger_title.setAttribute("title", `${burger_title.innerHTML}`);
 }
 refresh();
 console.log(burgers_arr[current_index].burger_desc);
@@ -64,7 +65,7 @@ const hamburger = document.querySelector(".hamburger");
 TweenLite.set('.line01', { x: 40 });
 TweenLite.set('.line03', { x: -40 });
 TweenLite.set('.navigation', { xPercent: -50, yPercent: -50 })
-TweenLite.set('.navigation li', { x: -610 });
+TweenLite.set('.navigation li', { x: "-100%" });
 
 const hamburgerMotion = new TimelineMax()
   .to('.line03', 0.4, { x: '-=40' }, 0)
@@ -98,59 +99,3 @@ function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeCo
 }
 setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
 
-
-
-
-// TRANSITION PAGES BARBA JS GSAP
-
-
-const wipe = document.querySelector('.wipe-transition');
-const allBandes = document.querySelectorAll('.bande');
-
-
-function delay(n) {
-  return new Promise((done) => {
-    setTimeout(() => {
-      done();
-    }, n)
-  })
-}
-
-barba.init({
-
-  sync: true,
-
-  transitions: [{
-    async leave() {
-
-      const done = this.async();
-
-      TLAnim
-        .to(allBandes, {
-          height: '100%',
-          stagger: 0.05
-        })
-
-      // TLAnim.to(wipe, {left: '0%', ease: "power2.out", duration: 0.5});
-
-      await delay(1500);
-      done();
-
-    },
-    enter() {
-
-      // TLAnim
-      // .to(wipe, {left: '100%', ease:"power2.in", duration: 0.5})
-      // .set(wipe, {left: '-100%'})
-
-      TLAnim
-        .to(allBandes, {
-          height: '0%',
-          stagger: 0.05
-        })
-
-    }
-  }]
-
-})
-// SCROLL TRIGGER ANIMATION

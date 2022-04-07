@@ -107,19 +107,21 @@
 // Scroll Trigger
 // gsap.registerPlugin(ScrollTrigger);
 
-
-gsap.to(".burger_description li", {
-  scrollTrigger: {
-    trigger: "#menu",
-    start: "top center",
-    toggleActions: "restart pause reverse pause"
-  },
-  x: -900,
-  duration: 2
-});
-
 const tl = new TimelineMax();
+const allBandes = document.querySelectorAll('.bande');
+const wipe = document.querySelector('.wipe-transition');
 
 tl.fromTo(".svg-container", 1.5, { y: -600, opacity: 0, scale: 0.5 },
-  {  y: 0, opacity: 1, scale: 1 })
-  // ease: Elastic.easeOut,
+  { y: 0, opacity: 1, scale: 1 })
+// ease: Elastic.easeOut,
+const navLink = document.querySelectorAll(".navbar_item_link");
+console.log(navLink);
+navLink.forEach(link => {
+  link.addEventListener("click", () => {
+    console.log(link);
+    tl.to(allBandes, { height: '100%', stagger: 0.05 });
+    tl.to(allBandes, { height: '0%', stagger: 0.05 });
+    tl.fromTo(wipe, 0.5, { left: '0%', ease: "power2.out" }, { left: '100%', ease: "power2.in" });
+    tl.set(wipe, { left: '-100%' });
+  });
+});

@@ -203,7 +203,7 @@ section.section {
   align-items: center;
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0)), url("/assets/images/background.jpg") no-repeat center center/ cover;
+      rgba(0, 0, 0, 0)), url("/assets/images/background.png") no-repeat center center/ cover;
 
 }
 
@@ -244,9 +244,74 @@ section.section {
 }
 
 .burger_title {
+  position: relative;
   font-family: 'VT323', monospace;
   font-size: 8vw;
   text-align: center;
+  animation: glitch 1.5s linear infinite;
+  overflow: hidden;
+}
+
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+
+  4%, 60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.burger_title:before,
+.burger_title:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.burger_title:before {
+  animation: glitchTop 1.5s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%, 64% {
+    transform: translate(2px, -2px);
+  }
+
+  4%, 60% {
+    transform: translate(-2px, 2px);
+  }
+
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+.burger_title:after {
+  animation: glitchBotom 2s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%, 64% {
+    transform: translate(-2px, 0);
+  }
+
+  4%, 60% {
+    transform: translate(-2px, 0);
+  }
+
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
 }
 
 .burger_description {
@@ -281,9 +346,9 @@ section.section {
 }
 
 .pixel_coin img {
-  width: 10%;
+  width: 14%;
   height: auto;
-  animation: coin 4s alternate-reverse infinite;
+  animation: coin 3s alternate-reverse infinite;
 }
 
 .btn-uber-eat {
@@ -317,7 +382,7 @@ section.section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 101%;
   /* margin-bottom: 3rem; */
   padding: 0 15px;
 }
@@ -354,6 +419,10 @@ section.section {
     "about-content-2";
   justify-self: center;
   align-self: center;
+}
+
+.julien, .basile {
+  display: none;
 }
 
 .about-content {
@@ -449,7 +518,7 @@ section.section {
 .wipe-transition {
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(90deg, rgb(165, 165, 223), midnightblue);
+  background: url("assets/images/basile_julien neon.jpg") no-repeat center center / cover;
   position: absolute;
   left: -100%;
 }
@@ -607,6 +676,10 @@ section.section {
     justify-self: center;
     align-self: center;
     padding: 0 15px;
+  }
+
+  .julien, .basile {
+    display: none;
   }
 
   /* ABOUT RESPONSIVE */
@@ -807,6 +880,59 @@ section.section {
   #home, #about, #contact {
     padding-top: 4vh;
   }
+
+  #about {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .about-content-1 {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .about-content-2 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .about-content p {
+    font-size: 1.8vw;
+    padding: 40px 50px 0px 30px;
+  }
+
+  .julien {
+
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .julien, .basile {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 1em;
+  }
+
+  .basile_name, .julien_name {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'VT323', monospace;
+    font-size: 4vw;
+  }
+
+  .julien img, .basile img {
+    width: 15%;
+    height: auto;
+  }
+
+  .basile {
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
 
   .navbar_list {
     display: flex;
