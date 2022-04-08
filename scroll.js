@@ -1,3 +1,4 @@
+
 (function () {
   "use strict";
   /*[pan and section_wrapper CSS scrolls]*/
@@ -8,7 +9,7 @@
     var slength, plength, pan, step = 100,
       vh = window.innerHeight / 100,
       vmin = Math.min(window.innerHeight, window.innerWidth) / 100;
-    console.log(this);
+
     if ((this !== undefined && this.id === 'section_wrapper') || (obj !== undefined && obj.id === 'section_wrapper')) {
       pan = this || obj;
       plength = parseInt(pan.offsetHeight / vh);
@@ -32,7 +33,7 @@
         hold = false;
       }, 1000);
     }
-    console.log(scdir + ':' + slength + ':' + plength + ':' + (plength - plength / section));
+
   }
   /*[swipe detection on touchscreen devices]*/
   function _swipe(obj) {
@@ -103,25 +104,3 @@
   _swipe(section_wrapper);
 
 })();
-
-// Scroll Trigger
-// gsap.registerPlugin(ScrollTrigger);
-
-const tl = new TimelineMax();
-const allBandes = document.querySelectorAll('.bande');
-const wipe = document.querySelector('.wipe-transition');
-
-tl.fromTo(".svg-container", 1.5, { y: -600, opacity: 0, scale: 0.5 },
-  { y: 0, opacity: 1, scale: 1 })
-// ease: Elastic.easeOut,
-const navLink = document.querySelectorAll(".navbar_item_link");
-console.log(navLink);
-navLink.forEach(link => {
-  link.addEventListener("click", () => {
-    console.log(link);
-    tl.to(allBandes, { height: '100%', stagger: 0.05 });
-    tl.to(allBandes, { height: '0%', stagger: 0.05 });
-    tl.fromTo(wipe, 0.5, { left: '0%', ease: "power2.out" }, { left: '100%', ease: "power2.in" });
-    tl.set(wipe, { left: '-100%' });
-  });
-});

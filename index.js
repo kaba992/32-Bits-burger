@@ -1,5 +1,5 @@
+
 // BURGER MENU DYNAMIC CONTENT
-console.log(menuData);
 const burger_title = document.querySelector(".burger_title");
 const burger_description = document.querySelector(".burger_description");
 const price_simple = document.querySelector(".price-simple");
@@ -18,27 +18,11 @@ function refresh() {
   price_simple.innerHTML = burgers_arr[current_index].price_simple;
   price_double.innerHTML = burgers_arr[current_index].price_double || "";
   burger_img.src = burgers_arr[current_index].img;
-  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
+  const burgerDescTag = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
+  burger_description.insertAdjacentHTML("beforeend", burgerDescTag);
   burger_title.setAttribute("title", `${burger_title.innerHTML}`);
 }
 refresh();
-
-const bannerContent = document.querySelector(".banner_content");
-const bannerItems = document.querySelectorAll(".burger_description_item");
-arrow_left.addEventListener("click", () => {
-
-  TLAnim.to(bannerContent, 0.6,{ x: "-100%" });
-  TLAnim.to(bannerContent,0.6, { x: "0%", ease: Sine.easeOut });
-  swipe('left')
-});
-arrow_right.addEventListener("click", () => {
-  TLAnim.to(bannerContent, { x: "-100%"});
-  TLAnim.to(bannerContent, { x: "0%", ease: Sine.easeOut });
-  swipe('right')
-});
-bannerContent.addEventListener("animationend", () => {
-  bannerContent.classList.remove("slide_right") || bannerContent.classList.remove("slide_left");
-});
 const swipe = (direction) => {
 
   let burger_size = burgers_arr.length;
@@ -53,11 +37,38 @@ const swipe = (direction) => {
     if (current_index < 0) {
       current_index = burger_size - 1;
     }
-
   }
-  refresh();
-
+  burger_title.innerHTML = burgers_arr[current_index].burger_names;
+  price_simple.innerHTML = burgers_arr[current_index].price_simple;
+  price_double.innerHTML = burgers_arr[current_index].price_double || "";
+  const emptyPrice = document.querySelector(".price2");
+  if (price_double.innerHTML === "") {
+    emptyPrice.classList.add("empty_price");
+  } else {
+    emptyPrice.classList.remove("empty_price");
+  }
+  burger_img.src = burgers_arr[current_index].img;
+  burger_title.setAttribute("title", `${burger_title.innerHTML}`);
 }
+
+const bannerContent = document.querySelectorAll(".burger_description li");
+const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
+const menuAnim = () => {
+  TLAnim.fromTo(bannerContent, 0.6, { x: "100%", stagger: 0.05 }, { x: "0%", stagger: 0.05, ease: Back.easeOut });
+  TLAnim.fromTo(".burger-img", 0.6, { scale: 0 }, { scale: 1, ease: Back.easeOut });
+  TLAnim.fromTo(".title-wrapper", 0.6, { scale: 0 }, { scale: 1, ease: Back.easeOut });
+  TLAnim.fromTo(priceAnim, 0.4, { opacity: 0 }, { opacity: 1, ease: Back.easeOut });
+}
+arrow_left.addEventListener("click", () => {
+  menuAnim();
+  swipe('left');
+});
+arrow_right.addEventListener("click", () => {
+  menuAnim();
+  swipe('right')
+});
+
+
 
 //ANIMATION BURGER MENU
 
@@ -78,6 +89,25 @@ const hamburgerMotion = new TimelineMax()
 
 hamburger.addEventListener('click', function (e) {
   hamburgerMotion.reversed(!hamburgerMotion.reversed());
+  console.log("hamburger ", hamburgerMotion.reversed());
+});
+
+
+const allBandes = document.querySelectorAll('.bande');
+const wipe = document.querySelector('.wipe-transition');
+
+const navLink = document.querySelectorAll(".navbar_item_link, .mobile_menu_link");
+navLink.forEach(link => {
+  link.addEventListener("click", () => {
+    console.log(link);
+    TLAnim.to(allBandes, { height: '100%', stagger: 0.05 });
+    TLAnim.to(allBandes, { height: '0%', stagger: 0.05 });
+    TLAnim.fromTo(wipe, 0.5, { left: '0%', ease: "power2.out" }, { left: '100%', ease: "power2.in" });
+    TLAnim.set(wipe, { left: '-100%' });
+    hamburgerMotion.reversed(!hamburgerMotion.reversed());
+    console.log("link ", hamburgerMotion.reversed());
+
+  });
 });
 
 
@@ -99,3 +129,6 @@ function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeCo
   }
 }
 setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
+
+TLAnim.fromTo(".svg-container", 1.5, { y: "-100%", opacity: 0, scale: 0, ease: Back.easeOut },
+  { y: 0, opacity: 1, scale: 1, ease: Back.easeOut })
