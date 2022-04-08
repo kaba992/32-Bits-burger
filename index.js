@@ -22,17 +22,18 @@ function refresh() {
   burger_title.setAttribute("title", `${burger_title.innerHTML}`);
 }
 refresh();
-console.log(burgers_arr[current_index].burger_desc);
+
 const bannerContent = document.querySelector(".banner_content");
 const bannerItems = document.querySelectorAll(".burger_description_item");
 arrow_left.addEventListener("click", () => {
-  // bannerContent.classList.add("slide_right");
-  TLAnim.fromTo(bannerItems, 1, { x: "-100%", opacity: 0, scale: 0.5 },
-    { x: 0, opacity: 1, scale: 1 });
+
+  TLAnim.to(bannerContent, 0.6,{ x: "-100%" });
+  TLAnim.to(bannerContent,0.6, { x: "0%", ease: Sine.easeOut });
   swipe('left')
 });
 arrow_right.addEventListener("click", () => {
-  bannerContent.classList.add("slide_left");
+  TLAnim.to(bannerContent, { x: "-100%"});
+  TLAnim.to(bannerContent, { x: "0%", ease: Sine.easeOut });
   swipe('right')
 });
 bannerContent.addEventListener("animationend", () => {
@@ -98,4 +99,3 @@ function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeCo
   }
 }
 setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
-
