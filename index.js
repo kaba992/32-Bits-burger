@@ -8,6 +8,9 @@ const burger_img = document.querySelector(".burger-img");
 const arrow_left = document.querySelector(".fa-arrow-left");
 const arrow_right = document.querySelector(".fa-arrow-right");
 const TLAnim = new TimelineMax();
+const tl = new TimelineLite({ paused: true });
+
+
 
 let burgers_arr = [];
 burgers_arr = menuData.burgers;
@@ -54,10 +57,10 @@ const swipe = (direction) => {
 const bannerContent = document.querySelectorAll(".burger_description li");
 const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
 const menuAnim = () => {
-  TLAnim.fromTo(bannerContent, 0.6, { x: "100%", stagger: 0.05 }, { x: "0%", stagger: 0.05, ease: Back.easeOut });
-  TLAnim.fromTo(".burger-img", 0.6, { scale: 0 }, { scale: 1, ease: Back.easeOut });
-  TLAnim.fromTo(".title-wrapper", 0.6, { scale: 0 }, { scale: 1, ease: Back.easeOut });
-  TLAnim.fromTo(priceAnim, 0.4, { opacity: 0 }, { opacity: 1, ease: Back.easeOut });
+  TLAnim.fromTo(".burger-img", { scale: 0 }, { scale: 1, ease: Back.easeOut });
+  TLAnim.fromTo(".title-wrapper", { scale: 0 }, { scale: 1, ease: Back.easeOut });
+  TLAnim.fromTo(bannerContent, 1, { x: "-100%", stagger: 0.05 }, { x: "0%", stagger: 0.05, ease: Back.easeOut });
+  TLAnim.fromTo(priceAnim, { opacity: 0 }, { opacity: 1, ease: Back.easeOut });
 }
 arrow_left.addEventListener("click", () => {
   menuAnim();
@@ -87,29 +90,59 @@ const hamburgerMotion = new TimelineMax()
   .to('.navigation li', 1, { marginBottom: '40px', ease: Power1.easeOut })
   .reverse()
 
-hamburger.addEventListener('click', function (e) {
+hamburger.addEventListener('click', () => {
   hamburgerMotion.reversed(!hamburgerMotion.reversed());
-  console.log("hamburger ", hamburgerMotion.reversed());
 });
-
 
 const allBandes = document.querySelectorAll('.bande');
 const wipe = document.querySelector('.wipe-transition');
 
-const navLink = document.querySelectorAll(".navbar_item_link, .mobile_menu_link");
-navLink.forEach(link => {
-  link.addEventListener("click", () => {
-    console.log(link);
-    TLAnim.to(allBandes, { height: '100%', stagger: 0.05 });
-    TLAnim.to(allBandes, { height: '0%', stagger: 0.05 });
-    TLAnim.fromTo(wipe, 0.5, { left: '0%', ease: "power2.out" }, { left: '100%', ease: "power2.in" });
-    TLAnim.set(wipe, { left: '-100%' });
-    hamburgerMotion.reversed(!hamburgerMotion.reversed());
-    console.log("link ", hamburgerMotion.reversed());
+const navLink = document.querySelectorAll(".navbar_item_link");
+const mobLink = document.querySelectorAll(".mobile_menu_link");
 
+// Navigation au click 
+const scrollLink = (e) => {
+  e.forEach((link, i) => {
+    link.addEventListener("click", () => {
+      //Permet de s'arreter à la slide souhaitée
+      link.id = "Dot" + i;
+      tl.seek(link.id).pause();
+      TLAnim.to(allBandes, { height: '100%', stagger: 0.05 });
+      TLAnim.to(allBandes, { height: '0%', stagger: 0.05 });
+      TLAnim.fromTo(wipe, 0.5, { left: '0%', ease: Back.easeOut }, { left: '100%', ease: Back.easeOut });
+      TLAnim.set(wipe, { left: '-100%', ease: Back.easeOut });
+      hamburgerMotion.reversed(!hamburgerMotion.reversed());
+
+    });
   });
-});
+}
+scrollLink(navLink);
+scrollLink(mobLink);
 
+/* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
+
+TweenLite.set('body', { perspective: 700 });
+var slides = document.querySelectorAll('.slide');
+
+for (let i = 0; i < slides.length; i++) {
+
+  if (i != 0) { tl.addPause("Dot" + i) }
+  if (i != slides.length - 1) {
+    tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
+      .to(slides[i], 0.7, { xPercent: -100, rotationY: 80 }, 'L' + i)
+      .from(slides[i + 1], 0.7, { xPercent: 100, rotationY: -80 }, 'L' + i)
+      .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
+  }
+}
+function GO(e) {
+  var SD = isNaN(e) ? e.wheelDelta || -e.detail : e;
+  if (SD < 0) { tl.play() } else { tl.reverse() }
+}
+
+document.addEventListener("mousewheel", GO);
+document.addEventListener("DOMMouseScroll", GO);
+
+/* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
 
 
 

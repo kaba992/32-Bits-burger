@@ -19,6 +19,11 @@
   margin: 0;
 }
 
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
 
   color: #fff;
@@ -68,10 +73,7 @@ img, svg {
 
 /* NAVBAR */
 header {
-  /* margin-top: 50px; */
   position: fixed;
-  /* for Safari */
-  /* position: sticky; */
   top: 0;
   z-index: 1001;
   width: 100%;
@@ -139,7 +141,6 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  overflow: hidden;
   width: 100%;
   text-align: center;
 }
@@ -176,25 +177,34 @@ header {
 
 
 
-/* SECTION */
-.section_wrapper {
-  position: relative;
-  /* margin-top: 10vh; */
-  transition: 1s cubic-bezier(0.5, 0, 0.5, 1);
+/* SECTION full page scroll */
 
-}
-
-section.section {
+#section_wrapper {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100%;
+  height: 100%;
   overflow: hidden;
 }
 
+.box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+section.box {
+  height: 100vh;
+  width: 100vw;
+}
+
+
+
+
+
 #menu, #about, #contacts {
   padding-top: 15vh;
-  /* padding-left: 15px;
-  padding-right: 15px; */
 }
 
 /* SECTION HOME */
@@ -205,7 +215,7 @@ section.section {
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0)), url("/assets/images/background.png") no-repeat center center/ cover;
-
+  height: 100%;
 }
 
 .svg-container {
@@ -229,11 +239,8 @@ section.section {
   flex-direction: column;
   align-items: center;
   grid-area: banner;
-  /* padding: 50px 15px; */
   height: 100%;
-  /* max-width: 600px; */
   background: #000000;
-  /* overflow: hidden; */
 
 }
 
@@ -320,7 +327,6 @@ section.section {
   flex-wrap: wrap;
   gap: 1rem 0;
   align-items: center;
-  overflow: hidden;
 }
 
 .burger_description_item {
@@ -356,8 +362,8 @@ section.section {
 .btn-uber-eat {
   padding: 10px 20px;
   border-radius: 8px;
-  font-size: 2vw;
-  margin-top: 3em;
+  font-size: 4vw;
+  margin-top: 1.5em;
   background: #333333;
 }
 
@@ -386,7 +392,7 @@ section.section {
   align-items: center;
   width: 101%;
   /* margin-bottom: 3rem; */
-  padding: 0 15px;
+  padding: 0 30px;
 }
 
 .burger-arrow_wrapper i {
@@ -415,12 +421,7 @@ section.section {
   background: url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas:
-    "about-content-1"
-    "about-content-2";
-  justify-self: center;
-  align-self: center;
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .julien, .basile {
@@ -435,11 +436,11 @@ section.section {
 }
 
 .about-content-1 {
-  grid-area: about-content-1;
+  grid-area: 1 / 1 / 2 / 2;
 }
 
 .about-content-2 {
-  grid-area: about-content-2;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 
@@ -495,16 +496,15 @@ section.section {
   background: transparent;
   display: flex;
   justify-content: center;
-  /* overflow: hidden; */
   position: absolute;
   pointer-events: none;
-  /* background: #000; */
   z-index: 500;
 }
 
 .bande {
   width: 10%;
   height: 0%;
+
 }
 
 .bande:nth-child(even) {
@@ -520,9 +520,10 @@ section.section {
 .wipe-transition {
   width: 100vw;
   height: 100vh;
-  background: url("assets/images/basile_julien neon.jpg") no-repeat center center / cover;
+  background: url("assets/images/background_transition.jpg") no-repeat center center / cover;
   position: absolute;
   left: -100%;
+  z-index: 499;
 }
 
 .empty_price {
@@ -583,6 +584,18 @@ section.section {
   #home {
     background: url("/assets/images/background_phone.jpg") no-repeat center center / contain;
   }
+
+  .bande {
+    width: calc(100% / 3);
+  }
+
+  .bande:nth-child(n+4) {
+    display: none;
+  }
+
+
+
+
 }
 
 /* FORMAT TABLET */
@@ -604,6 +617,14 @@ section.section {
   .logo img {
     width: 8rem;
 
+  }
+
+  .bande {
+    width: calc(100% / 6);
+  }
+
+  .bande:nth-child(n+7) {
+    display: none;
   }
 
 
@@ -745,6 +766,9 @@ section.section {
     font-size: 1.5rem;
   }
 
+  .menu {
+    display: none !important;
+  }
 
   #menu {
     display: grid;
@@ -854,6 +878,7 @@ section.section {
 @media screen and (min-width: 1024px) {
   #home, #about, #contact {
     padding-top: 4vh;
+
   }
 
   #about {
@@ -932,8 +957,6 @@ section.section {
   .img-wrapper {
     max-width: 400px;
     max-height: 350px;
-    /* width: 100%; */
-    /* height: auto; */
   }
 
   #menu {
@@ -968,6 +991,7 @@ section.section {
 
   .btn-uber-eat {
     margin: 0;
+    font-size: 2vw;
   }
 
 }
