@@ -57,10 +57,10 @@ const swipe = (direction) => {
 const bannerContent = document.querySelectorAll(".burger_description li");
 const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
 const menuAnim = () => {
-  TLAnim.fromTo(".burger-img", { scale: 0 }, { scale: 1, ease: Back.easeOut });
-  TLAnim.fromTo(".title-wrapper", { scale: 0 }, { scale: 1, ease: Back.easeOut });
-  TLAnim.fromTo(bannerContent, 1, { x: "-100%", stagger: 0.05 }, { x: "0%", stagger: 0.05, ease: Back.easeOut });
-  TLAnim.fromTo(priceAnim, { opacity: 0 }, { opacity: 1, ease: Back.easeOut });
+  TLAnim.from(bannerContent, 1.5, { xPercent: -100, stagger: 0.05, ease: Back.easeOut },);
+  TLAnim.from(".burger-img", { scale: 0.3, ease: Back.easeOut }, "<0.5");
+  TLAnim.from(".title-wrapper", { scale: 0, ease: Back.easeOut }, "<0.3");
+  TLAnim.from(priceAnim, { opacity: 0, ease: Back.easeOut },"<0.5");
 }
 arrow_left.addEventListener("click", () => {
   menuAnim();
@@ -100,7 +100,7 @@ const wipe = document.querySelector('.wipe-transition');
 const navLink = document.querySelectorAll(".navbar_item_link");
 const mobLink = document.querySelectorAll(".mobile_menu_link");
 
-// Navigation au click 
+// Navigation au click
 const scrollLink = (e) => {
   e.forEach((link, i) => {
     link.addEventListener("click", () => {
