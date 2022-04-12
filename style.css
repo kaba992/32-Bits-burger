@@ -899,6 +899,10 @@ section.box {
     grid-area: 2 / 1 / 3 / 2;
   }
 
+  .menu{
+    display: none;
+  }
+
   .julien, .basile {
     position: relative;
     width: 100%;
