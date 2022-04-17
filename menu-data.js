@@ -1,7 +1,7 @@
 const menuData = {
   burgers: [
     {
-      burger_names: "Classic Cheese Super",
+      burger_names: "Cheese Super",
       burger_desc: [
         "Potatoe bun généreux",
         "Viande Aubrac bien fat",
@@ -9,7 +9,7 @@ const menuData = {
         "Emincé d'oignons",
         "Pickles",
         "Ketchup-moutarde",
-        "Deux belles tranches de Poitrine de porc fumée"
+        "Poitrine de porc fumée"
       ],
       price_simple: 9.5,
       price_double: 10.5,
@@ -32,7 +32,7 @@ const menuData = {
     },
 
     {
-      burger_names: "Classic Cheese God",
+      burger_names: "Cheese God",
       burger_desc: [
         "Potatoe bun généreux",
         "Viande Aubrac bien fat",
@@ -40,7 +40,7 @@ const menuData = {
         "Emincé d'oignons",
         "Pickles",
         "Ketchup-moutarde",
-        "Deux belles tranches de Poitrine de porc fumée  et confite"
+        "Poitrine de porc fumée et confite"
       ],
       price_simple: 10,
       price_double: 11,
@@ -50,11 +50,11 @@ const menuData = {
       burger_names: "32 Bits.",
       burger_desc: [
         "Pain brioché graines de sésame",
-        "Viande Aubrac de ouf smashée aux oignons",
+        "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
         "Pickles",
-        "Sauce saija-jin"
+        "Sauce saiya-jin"
       ],
       price_simple: 10,
       price_double: 11,
@@ -64,12 +64,12 @@ const menuData = {
       burger_names: "32 Bits. Super",
       burger_desc: [
         "Pain brioché graines de sésame",
-        "Viande Aubrac de ouf smashée aux oignons",
+        "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
         "Pickles",
         "Poitrine de porc fumée",
-        "Sauce saija-jin"
+        "Sauce saiya-jin"
       ],
       price_simple: 10.5,
       price_double: 11.5,
@@ -79,7 +79,7 @@ const menuData = {
       burger_names: "32 Bits. God",
       burger_desc: [
         "Pain brioché graines de sésame",
-        "Viande Aubrac de ouf smashée aux oignons",
+        "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
         "Pickles",
@@ -94,7 +94,7 @@ const menuData = {
       burger_names: "Veggie Namek",
       burger_desc: [
         "Potatoe bun",
-        "genkidama de chèvre pané au riz soufflé",
+        "Genkidama de chèvre pané au riz soufflé",
         "Cheddar",
         "Sucrine",
         "Tomates",
@@ -110,14 +110,14 @@ const menuData = {
     side_price: 3.5
   }],
   drinks: [{
-    drink_name: "Evian",
+    drink_name: "Eau minérale",
     drink_price: 2.5,
     drink_qty: "50cl"
   },
   {
-    drink_name: "Badoit",
+    drink_name: "Eau pétillante",
     drink_price: 2.5,
-    drink_qty: "33cl"
+    drink_qty: "50cl"
   },
   {
     drink_name: "Coca",
@@ -145,22 +145,22 @@ const menuData = {
     drink_qty: "33cl"
   },
   {
-    drink_name: "Condor",
+    drink_name: "Bière locale Condor(blonde)",
     drink_price: 5.5,
     drink_qty: "33cl"
   },
   {
-    drink_name: "Bower Bird",
+    drink_name: "Bière locale Bower Bird(IPA)",
     drink_price: 5.5,
     drink_qty: "33cl"
   },
   {
-    drink_name: "Garde-Fou",
+    drink_name: "Bière locale Garde-Fou(ambrée)",
     drink_price: 5.5,
     drink_qty: "33cl"
   },
   {
-    drink_name: "Bière Local du Moment",
+    drink_name: "Bière Locale du Moment",
     drink_price: 5.5,
     drink_qty: null
   }
