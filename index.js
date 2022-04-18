@@ -9,7 +9,7 @@ const arrow_left = document.querySelector(".fa-arrow-left");
 const arrow_right = document.querySelector(".fa-arrow-right");
 const TLAnim = new TimelineMax();
 const tl = new TimelineLite({ paused: true });
-const bannerContent = document.querySelectorAll(".burger_description li");
+
 
 
 let burgers_arr = [];
@@ -19,11 +19,14 @@ let current_index = 0;
 const burgerDescTag = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
 burger_description.insertAdjacentHTML("beforeend", burgerDescTag);
 burger_title.setAttribute("title", `${burger_title.innerHTML}`);
+
+
 function refresh() {
   burger_title.innerHTML = burgers_arr[current_index].burger_names;
   price_simple.innerHTML = burgers_arr[current_index].price_simple;
   price_double.innerHTML = burgers_arr[current_index].price_double || "";
   burger_img.src = burgers_arr[current_index].img;
+  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
 }
 refresh();
 const swipe = (direction) => {
@@ -52,21 +55,22 @@ const swipe = (direction) => {
 
 }
 
-
+const bannerContent = document.querySelectorAll(".burger_description");
 const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
+console.log(bannerContent);
 const menuAnim = () => {
-  TLAnim.from(bannerContent, 1.5, { xPercent: -100, opacity: 0, stagger: 0.05, ease: Back.easeOut },);
+  TLAnim.from(bannerContent, 1.5, { xPercent: -100, opacity: 0, stagger: 0.05, ease: Back.easeOut });
   TLAnim.from(".burger-img", { scale: 0.3, ease: Back.easeOut }, "<0.5");
   TLAnim.from(".title-wrapper", { scale: 0, ease: Back.easeOut }, "<0.3");
   TLAnim.from(priceAnim, { opacity: 0, ease: Back.easeOut }, "<0.5");
 }
 arrow_left.addEventListener("click", () => {
   swipe('left');
-  // menuAnim();
+  menuAnim();
 });
 arrow_right.addEventListener("click", () => {
   swipe('right')
-  // menuAnim();
+  menuAnim();
 });
 
 
@@ -162,4 +166,3 @@ function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeCo
 setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
 
 TLAnim.from(".svg-container", 1.5, { y: "-100%", opacity: 0, scale: 0, ease: Back.easeOut })
-GSDevTools.create();
