@@ -102,7 +102,7 @@ header {
 
 
 .logo img {
-  width: 6rem;
+  width: 3rem;
   height: auto;
   color: #fff;
 }
@@ -113,7 +113,7 @@ header {
   top: 6px;
   left: auto;
   right: 0px;
-  width: 10vw;
+  width: 7vw;
   cursor: pointer;
   z-index: 2;
   margin: -12px 20px;
@@ -203,7 +203,7 @@ section.box {
 
 
 #menu, #about, #contacts {
-  padding-top: 15vh;
+  padding-top: 80px;
 }
 
 /* SECTION HOME */
@@ -418,9 +418,6 @@ section.box {
 
 .about-content {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .about-content p {
