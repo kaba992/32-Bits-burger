@@ -212,7 +212,7 @@ section.box {
   align-items: center;
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0)), url("/assets/images/background.png") no-repeat center center/ cover;
+      rgba(0, 0, 0, 0)), url("./assets/images/background.png") no-repeat center center/ cover;
   height: 100%;
 }
 
@@ -405,7 +405,7 @@ section.box {
 /* SECTION ABOUT */
 
 #about {
-  background: url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
+  background: url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, 1fr);
@@ -546,18 +546,18 @@ section.box {
 
 .bande:nth-child(even) {
 
-  background: url(/assets/images/autres/logo-removebg-preview.png) no-repeat center center /300px 300px, url(/assets/images/autres/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(/assets/images/autres/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
+  background: url(./assets/images/autres/logo-removebg-preview.png) no-repeat center center /300px 300px, url(./assets/images/autres/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(./assets/images/autres/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
 }
 
 .bande:nth-child(odd) {
 
-  background: url(/assets/images/autres/brique.png) repeat-y top / 100% 100px;
+  background: url(./assets/images/autres/brique.png) repeat-y top / 100% 100px;
 }
 
 .wipe-transition {
   width: 100vw;
   height: 100vh;
-  background: url("assets/images/background_transition.jpg") no-repeat center center / cover;
+  background: url("./assets/images/background_transition.jpg") no-repeat center center / cover;
   position: absolute;
   left: -100%;
   z-index: 499;
@@ -631,7 +631,7 @@ section.box {
 
 @media screen and (max-width: 480px) {
   #home {
-    background: url("/assets/images/background_phone.jpg") no-repeat center center / contain;
+    background: url("./assets/images/background_phone.jpg") no-repeat center center / contain;
   }
 
   .bande {
@@ -649,7 +649,7 @@ section.box {
 
   /* HOME RESPONSIVE */
   #home {
-    background: url("/assets/images/background_ipad.jpg") no-repeat center center / cover;
+    background: url("./assets/images/background_ipad.jpg") no-repeat center center / cover;
   }
 
   .mobile_menu_link {
@@ -705,7 +705,7 @@ section.box {
   #about {
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)), url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
+        rgba(0, 0, 0, 0.4)), url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
@@ -812,7 +812,7 @@ section.box {
 
 
   #home {
-    background: url("/assets/images/background_831px.jpg") no-repeat center center / cover;
+    background: url("./assets/images/background_831px.jpg") no-repeat center center / cover;
 
   }
 
@@ -854,7 +854,7 @@ section.box {
   #about {
     background: linear-gradient(to bottom,
         rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)), url("/assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
+        rgba(0, 0, 0, 0.4)), url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
   }
 
   .about-content p {
@@ -908,7 +908,7 @@ section.box {
 
 @media screen and (min-width: 1024px) {
   #home {
-    background: url("/assets/images/background.png") no-repeat center bottom / contain;
+    background: url("./assets/images/background.png") no-repeat center bottom / contain;
 
   }
 
