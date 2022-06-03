@@ -16,9 +16,9 @@ let burgers_arr = [];
 burgers_arr = menuData.burgers;
 
 let current_index = 0;
-const burgerDescTag = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
-burger_description.insertAdjacentHTML("beforeend", burgerDescTag);
-burger_title.setAttribute("title", `${burger_title.innerHTML}`);
+// const burgerDescTag = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item">${desc}</li>`).join("");
+// burger_description.insertAdjacentHTML("beforeend", burgerDescTag);
+// burger_title.setAttribute("title", `${burger_title.innerHTML}`);
 
 
 function refresh() {
@@ -26,7 +26,7 @@ function refresh() {
   price_simple.innerHTML = burgers_arr[current_index].price_simple;
   price_double.innerHTML = burgers_arr[current_index].price_double || "";
   burger_img.src = burgers_arr[current_index].img;
-  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
+  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item">${desc}</li>`).join("");
 }
 refresh();
 const swipe = (direction) => {
