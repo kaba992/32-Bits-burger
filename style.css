@@ -92,7 +92,6 @@ header {
 
 .navbar_list {
   display: none;
-  gap: 0 1.5rem;
   align-items: center;
 }
 
@@ -151,7 +150,6 @@ header {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  gap: 3rem 0;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -329,7 +327,6 @@ section.box {
 .burger_description {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 0;
   align-items: center;
 }
 
@@ -339,6 +336,7 @@ section.box {
   text-align: center;
   line-height: 1.5;
   letter-spacing: 0.1rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -363,28 +361,8 @@ section.box {
   animation: coin 3s alternate-reverse infinite;
 }
 
-.btn-uber-eat {
-  padding: 10px 5px;
-  border-radius: 8px;
-  font-size: 4vw;
-  margin-top: 0.5em;
-  background: #333333;
-}
 
-.btn-uber-eat>span {
-  color: var(--tertiary-color);
-}
 
-.btn-uber-eat:hover {
-  background: #333333;
-  box-shadow: inset 20px 20px 60px #2b2b2b,
-    inset -20px -20px 60px #3b3b3b;
-}
-
-.deliveroo {
-  width: 10vw;
-  height: auto;
-}
 
 .burger {
   display: flex;
@@ -469,7 +447,7 @@ section.box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem 0;
+
 }
 
 .horaires {
@@ -487,30 +465,64 @@ section.box {
 }
 
 .réseaux_wrapper_test {
-  width: 100%;
+  height: 150px;
+  margin: auto;
   overflow: hidden;
+  position: relative;
+  width: 960px;
 }
 
-.réseaux_wrapper {
+.réseaux_wrapper_test::before, .réseaux_wrapper_test::after{
+  content: "";
+  height: 100px;
+  position: absolute;
+  width: 50px;
+  z-index: 2;
+}
+
+.réseaux_wrapper_test::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.réseaux_wrapper_test::before{
+  left: 0;
+  top: 0;
+}
+
+.réseaux_wrapper_test .réseaux_wrapper{
+  animation: scroll 15s linear infinite;
   display: flex;
-  align-items: center;
-  gap: 0 10rem;
-  margin: 1.5em 0;
-  white-space: nowrap;
-  animation: infinite-scroll 15s linear infinite;
-  width: 6400px;
-  transform: translate3d(0, 0, 0);
+  width: calc(150px * 9);
+}
+
+.réseaux_wrapper_test .réseaux-slide{
+  height: 100px;
+  width: 150px;
+  padding-left: 20px;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 4.5));
+  }
 }
 
 .réseaux_wrapper:hover {
   animation-play-state: paused;
 }
 
-
 .réseaux_wrapper a i {
-  font-size: 2.5rem;
-  padding: 0;
+  font-size: 4rem;
+}
 
+.deliveroo {
+  width: 4rem;
+  height: auto;
 }
 
 
@@ -605,19 +617,13 @@ section.box {
 
 @keyframes infinite-scroll {
 
-  /* 0% {
-    transform: translate(0, 0);
-  }
 
-  100% {
-    transform: translate(-100%, 0);
-  } */
   0% {
     margin-left: 0;
   }
 
   100% {
-    margin-left: -1600px;
+    margin-left: -1000px;
   }
 }
 
@@ -694,9 +700,6 @@ section.box {
   }
 
 
-  .btn-uber-eat>span {
-    color: var(--tertiary-color);
-  }
 
   /* ABOUT RESPONSIVE */
   #about {
@@ -779,10 +782,27 @@ section.box {
   }
 
 
-  .réseaux_wrapper a i {
-    font-size: 5.5rem;
-
+  .réseaux_wrapper_test .réseaux_wrapper{
+    animation: scroll 15s linear infinite;
+    display: flex;
+    width: calc(200px * 9);
   }
+
+  .réseaux_wrapper_test .réseaux-slide{
+    height: 100px;
+    width: 200px;
+    padding-left: 20px;
+  }
+
+  .réseaux_wrapper a i {
+    font-size: 6rem;
+  }
+
+  .deliveroo {
+    width: 6rem;
+    height: auto;
+  }
+
 
 }
 
@@ -879,9 +899,7 @@ section.box {
     width: 100%;
     grid-area: 3 / 1 / 4 / 2;
   }
-  .réseaux_wrapper {
-    gap: 0 15rem;
-  }
+
 
   .réseaux_wrapper a i {
     font-size: 5.5rem;
@@ -1004,16 +1022,32 @@ section.box {
   .price {
     font-size: 3.5vw;
   }
+  .réseaux_wrapper_test {
 
-  .btn-uber-eat {
-    margin: 0;
-    font-size: 2vw;
+    width: 1280px;
+  }
+
+  .réseaux_wrapper_test .réseaux_wrapper{
+    animation: scroll 15s linear infinite;
+    display: flex;
+    width: calc(250px * 9);
+  }
+
+  .réseaux_wrapper_test .réseaux-slide{
+    height: 100px;
+    width: 250px;
+    padding-left: 20px;
+  }
+
+  .réseaux_wrapper a i {
+    font-size: 6rem;
   }
 
   .deliveroo {
-    width: 5vw;
+    width: 6rem;
     height: auto;
   }
+
 
   #contacts {
     padding-top: 12vh;
@@ -1022,9 +1056,7 @@ section.box {
   .contact_content p {
     font-size: 1.5rem;
   }
-  .réseaux_wrapper {
-    gap: 0 20rem;
-  }
+
 
 
 }
