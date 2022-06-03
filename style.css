@@ -97,6 +97,7 @@ header {
 
 .navbar_item_link {
   font-size: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 
@@ -546,12 +547,12 @@ section.box {
 
 .bande:nth-child(even) {
 
-  background: url(./assets/images/autres/logo-removebg-preview.png) no-repeat center center /300px 300px, url(./assets/images/autres/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(./assets/images/autres/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
+  background: url(./assets/images/logo-removebg-preview.png) no-repeat center center /300px 300px, url(./assets/images/basile-removebg-preview.png) no-repeat 50% 10% /100px 150px, url(./assets/images/julien-removebg-preview.png) no-repeat bottom /100px 150px, #000;
 }
 
 .bande:nth-child(odd) {
 
-  background: url(./assets/images/autres/brique.png) repeat-y top / 100% 100px;
+  background: url(./assets/images/brique.png) repeat-y top / 100% 100px;
 }
 
 .wipe-transition {
