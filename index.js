@@ -9,26 +9,32 @@ const arrow_left = document.querySelector(".fa-arrow-left");
 const arrow_right = document.querySelector(".fa-arrow-right");
 const TLAnim = new TimelineMax();
 const tl = new TimelineLite({ paused: true });
-
-
+const bannerContent = document.querySelectorAll(".burger_description");
+const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
 
 let burgers_arr = [];
 burgers_arr = menuData.burgers;
 
 let current_index = 0;
-const burgerDescTag = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
-burger_description.insertAdjacentHTML("beforeend", burgerDescTag);
-burger_title.setAttribute("title", `${burger_title.innerHTML}`);
-
 
 function refresh() {
   burger_title.innerHTML = burgers_arr[current_index].burger_names;
+  burger_title.setAttribute("title", `${burger_title.innerHTML}`);
   price_simple.innerHTML = burgers_arr[current_index].price_simple;
   price_double.innerHTML = burgers_arr[current_index].price_double || "";
   burger_img.src = burgers_arr[current_index].img;
-  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><i class="fa-solid fa-alien-8bit"></i>${desc}</li>`).join("");
+  burger_description.innerHTML = burgers_arr[current_index].burger_desc.map((desc) => `<li class="burger_description_item"><p>${desc}</p></li>`).join("");
 }
 refresh();
+
+const menuAnim = () => {
+  TLAnim.from(bannerContent, 1.5, { xPercent: -100, opacity: 0, stagger: 0.05, ease: Back.easeOut });
+  TLAnim.from(".burger-img", { scale: 0.3, ease: Back.easeOut }, "<0.5");
+  TLAnim.from(".title-wrapper", { scale: 0, ease: Back.easeOut }, "<0.3");
+  TLAnim.from(priceAnim, { opacity: 0, ease: Back.easeOut }, "<0.5");
+}
+
+
 const swipe = (direction) => {
 
   let burger_size = burgers_arr.length;
@@ -40,11 +46,13 @@ const swipe = (direction) => {
     }
   } else {
     current_index = current_index - 1;
+    console.log("test");
     if (current_index < 0) {
       current_index = burger_size - 1;
     }
   }
   refresh();
+  menuAnim();
 
   const emptyPrice = document.querySelector(".price2");
   if (price_double.innerHTML === "") {
@@ -55,25 +63,14 @@ const swipe = (direction) => {
 
 }
 
-const bannerContent = document.querySelectorAll(".burger_description");
-const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
-console.log(bannerContent);
-const menuAnim = () => {
-  TLAnim.from(bannerContent, 1.5, { xPercent: -100, opacity: 0, stagger: 0.05, ease: Back.easeOut });
-  TLAnim.from(".burger-img", { scale: 0.3, ease: Back.easeOut }, "<0.5");
-  TLAnim.from(".title-wrapper", { scale: 0, ease: Back.easeOut }, "<0.3");
-  TLAnim.from(priceAnim, { opacity: 0, ease: Back.easeOut }, "<0.5");
-}
 arrow_left.addEventListener("click", () => {
   swipe('left');
-  menuAnim();
+
 });
 arrow_right.addEventListener("click", () => {
   swipe('right')
-  menuAnim();
+
 });
-
-
 
 //ANIMATION BURGER MENU
 
