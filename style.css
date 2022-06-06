@@ -42,7 +42,7 @@ body::-webkit-scrollbar {
 
 p {
   font-family: 'Inter', sans-serif;
-  font-size: 1.2em;
+  font-size: 0.90em;
   line-height: 1.5;
   letter-spacing: 0.1rem;
   color: #fff;
@@ -242,9 +242,10 @@ section.box {
 .glitch {
   position: relative;
   font-family: 'VT323', monospace;
-  font-size: 1.5em;
+  font-size: 2.3em;
   text-align: center;
   animation: glitch 1.5s linear infinite;
+  width: fit-content;
   overflow: hidden;
 }
 
@@ -315,10 +316,11 @@ section.box {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .burger_description_item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .banne-price-wrapper {
@@ -371,7 +373,9 @@ section.box {
 /* SECTION ABOUT */
 
 #about {
-  background: url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
+  background: linear-gradient(to bottom,
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4)), url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -383,52 +387,78 @@ section.box {
 }
 
 .about_avatars{
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
+
+
+.about_avatar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_avatar_img{
+  width: 50%;
+
+}
 
 
 
 
 /* SECTION CONTACT */
-.contact_content {
+#contacts{
   display: flex;
   flex-direction: column;
-  height: 100%;
+  justify-content: space-between;
 }
 
 .contact_header {
   display: flex;
+  flex-wrap: wrap;
+
+}
+
+.contact_header_content{
+  width: 100%;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 
 }
 
-.horaires {
-  text-align: center;
-  font-size: 1.2rem;
+.contact_header_content--adresse{
+margin: 15px 0;
 }
 
-.réseaux_contact {
-  text-align: center;
-  font-size: 1.2rem;
+.contact_header_content h3{
+  margin: auto;
+}
+
+.réseaux_wrapper{
+  margin: 15px 0;
 }
 
 .map {
-  height: 50%;
+  height: 195px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
+
 .réseaux_wrapper_test {
-  height: 150px;
-  margin: auto;
   overflow: hidden;
   position: relative;
   width: 960px;
+
 }
 
 .réseaux_wrapper_test::before, .réseaux_wrapper_test::after{
   content: "";
-  height: 100px;
   position: absolute;
   width: 50px;
   z-index: 2;
@@ -452,7 +482,6 @@ section.box {
 }
 
 .réseaux_wrapper_test .réseaux-slide{
-  height: 100px;
   width: 150px;
   padding-left: 20px;
 }
@@ -471,12 +500,11 @@ section.box {
 }
 
 .réseaux_wrapper a i {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .deliveroo {
-  width: 4rem;
-  height: auto;
+  width: 3rem;
 }
 
 
@@ -588,6 +616,22 @@ section.box {
   }
 }
 
+@media (min-width: 390px) and (max-width: 414px){
+.burger_description{
+  margin-bottom: 1.5em;
+
+}
+.burger_description p{
+  font-size: 1.2rem;
+}
+
+.map {
+  height: 350px;
+
+}
+
+}
+
 /* FORMAT TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
 
@@ -624,9 +668,9 @@ section.box {
     height: 250px;
   }
 
-  /* .glitch {
-    font-size: 10vw;
-  } */
+  .glitch {
+    font-size: 5.3rem;
+  }
 
   .banne-price-wrapper {
     gap: 0 6rem;
@@ -637,70 +681,19 @@ section.box {
     font-size: 7vw;
   }
 
+  .about_avatar_img{
+    width: 40%;
+  }
+
   /* CONTACT RESPONSIVE */
-  #contacts {
-    padding-top: 4vh;
-  }
+.réseaux_wrapper_test .réseaux_wrapper{
+  width: calc(200px * 9);
+}
 
-  .contact_content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.4fr 1fr;
-    height: 100%;
-  }
+.réseaux_wrapper_test .réseaux-slide{
+  width: 200px;
+}
 
-
-
-  .contact_header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    grid-area: 1 / 1 / 2 / 2;
-    height: 100%;
-    padding-top: 11vh;
-
-  }
-
-  .contact_content h3 {
-    font-size: 8vw;
-  }
-
-  .contact_content p {
-    font-size: 3vw;
-  }
-
-  .horaires {
-    text-align: center;
-    font-size: 2vw;
-  }
-
-  .réseaux_contact {
-    text-align: center;
-    font-size: 2vw;
-    grid-area: 2 / 1 / 3 / 2;
-
-  }
-
-  .map {
-    flex: 1;
-    height: 100%;
-    width: 100%;
-    grid-area: 3 / 1 / 4 / 2;
-  }
-
-
-  .réseaux_wrapper_test .réseaux_wrapper{
-    animation: scroll 15s linear infinite;
-    display: flex;
-    width: calc(200px * 9);
-  }
-
-  .réseaux_wrapper_test .réseaux-slide{
-    height: 100px;
-    width: 200px;
-    padding-left: 20px;
-  }
 
   .réseaux_wrapper a i {
     font-size: 6rem;
@@ -710,93 +703,18 @@ section.box {
     width: 6rem;
     height: auto;
   }
-
-
+.map{
+  height: 40%;
 }
 
-
+}
 /* FORMAT DESKTOP */
-
-/* @media screen and (min-width: 821px) {
-
-  #menu {
-    display: grid;
-    grid-template-rows: 1fr;
-
-  }
-
-  .banner {
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
-    align-items: center;
-    grid-area: 1 / 1 / 2 / 2;
-    height: 100%;
-    width: 100%;
-  }
-
-  .burger-arrow_wrapper {
-    margin-bottom: 3rem;
-    padding: 0 15px;
-  }
-
-  .burger-arrow_wrapper i {
-    font-size: 4.5rem;
-    padding: 0 40px 0 40px;
-  }
-
-
-  #about {
-    background: linear-gradient(to bottom,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)), url("./assets/images/JulienetBasile_cuisine.jpg") no-repeat center center / cover;
-  }
-
-
-  .contact_content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 0.4fr 1fr;
-    height: 100%;
-  }
-
-
-
-  .contact_header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    grid-area: 1 / 1 / 2 / 2;
-    height: 100%;
-  }
-
-
-  .horaires {
-    text-align: center;
-    font-size: 2vw;
-  }
-
-  .réseaux_contact {
-    text-align: center;
-    font-size: 2vw;
-    grid-area: 2 / 1 / 3 / 2;
-
-  }
-
-  .map {
-    height: 100%;
-    width: 100%;
-    grid-area: 3 / 1 / 4 / 2;
-  }
-
-
-  .réseaux_wrapper a i {
-    font-size: 5.5rem;
-  }
-} */
-
 @media screen and (min-width: 1024px) {
+
+p{
+  font-size: 1.5em;
+}
+
   .navbar_list{
     display: flex;
     align-items: center;
@@ -829,14 +747,6 @@ section.box {
     font-size: 4vw;
   }
 
-  .julien img, .basile img {
-    width: 25%;
-    height: auto;
-  }
-
-  .basile {
-    grid-area: 1 / 2 / 2 / 3;
-  }
 
 
   .navbar_item_link {
@@ -852,10 +762,11 @@ section.box {
 
   }
 
-  /* .img-wrapper {
-    max-width: 400px;
-    max-height: 400px;
-  } */
+  .img-wrapper img{
+    max-width: 350px;
+    min-width: 350px;
+    height: auto;
+  }
 
   #menu {
     display: grid;
@@ -870,9 +781,9 @@ section.box {
     justify-content: center;
   }
 
-  /* .glitch {
-    font-size: 6vw;
-  } */
+  .glitch {
+    font-size: 5em;
+  }
 
 
   .banne-price-wrapper {
@@ -883,41 +794,46 @@ section.box {
   .price {
     font-size: 3.5vw;
   }
-  .réseaux_wrapper_test {
 
+  .about-content p{
+    font-size: 1.90em;
+    text-align: center;
+  }
+
+  .about_avatar_img{
+    width: 40%;
+
+  }
+
+  .contact_header_content{
+    width: 50%;
+  }
+
+
+  .réseaux_wrapper_test {
     width: 1280px;
+    margin: auto;
   }
 
   .réseaux_wrapper_test .réseaux_wrapper{
-    animation: scroll 15s linear infinite;
-    display: flex;
+
     width: calc(250px * 9);
   }
-
   .réseaux_wrapper_test .réseaux-slide{
-    height: 100px;
     width: 250px;
-    padding-left: 20px;
-  }
+}
 
   .réseaux_wrapper a i {
     font-size: 6rem;
-  }
+}
 
   .deliveroo {
     width: 6rem;
     height: auto;
+}
+
+  .map{
+    height: 40%;
   }
-
-
-  #contacts {
-    padding-top: 12vh;
-  }
-
-  .contact_content p {
-    font-size: 1.5rem;
-  }
-
-
 
 }
