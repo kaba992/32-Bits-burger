@@ -168,7 +168,6 @@ header {
 }
 
 /* SECTION full page scroll */
-
 #section_wrapper {
   position: relative;
   min-width: 100%;
@@ -751,6 +750,7 @@ p{
 
   .navbar_item_link {
     font-size: 1.5rem;
+    margin-right: 30px;
   }
 
   .hamburger {
