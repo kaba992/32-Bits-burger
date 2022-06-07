@@ -127,10 +127,10 @@ for (let i = 0; i < slides.length; i++) {
 
   if (i != 0) { tl.addPause("Dot" + i) }
   if (i != slides.length - 1) {
-    // tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
-      tl.to(slides[i], 0.7, { xPercent: -100, rotationY: 80 }, 'L' + i)
-      .from(slides[i + 1], 0.7, { xPercent: 100, rotationY: -80 }, 'L' + i)
-      // .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
+    tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
+      tl.to(slides[i], 0.7, { xPercent: -100}, 'L' + i)
+      .from(slides[i + 1], 0.7, { xPercent: 100 }, 'L' + i)
+      .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
   }
 }
 function GO(e) {
