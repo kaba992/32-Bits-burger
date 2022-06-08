@@ -778,7 +778,7 @@ p{
   }
 
   .glitch {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 
 
@@ -796,7 +796,7 @@ p{
   }
 
   .about_avatar_img{
-    width: 30%;
+    width: 25%;
 
   }
 
@@ -843,6 +843,9 @@ p{
   .about_avatar_img{
     width: 35%;
 
+  }
+  .glitch {
+    font-size: 5rem;
   }
 
   .réseaux_wrapper a i {
