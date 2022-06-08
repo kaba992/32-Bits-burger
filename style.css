@@ -385,6 +385,7 @@ section.box {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: -30px 0 -62px 0;
 }
 
 
@@ -397,7 +398,7 @@ section.box {
 }
 
 .about_avatar_img{
-  width: 30%;
+  width: 35%;
 
 }
 
@@ -832,7 +833,7 @@ p{
 
 }
 
-@media screen and (min-width: 1350px){
+@media screen and (min-width: 1450px){
 
   .about-content p{
     font-size: 1.90rem;
