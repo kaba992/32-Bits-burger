@@ -21,7 +21,7 @@
 
 html, body {
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 }
 
 body {
@@ -314,7 +314,7 @@ section.box {
 }
 
 .burger_description_item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
 }
 
 .banne-price-wrapper {
@@ -322,7 +322,7 @@ section.box {
   justify-content: center;
   align-items: baseline;
   gap: 0 3rem;
-  margin-top: 2em;
+  margin-top: 1em;
 }
 
 .price {
@@ -348,7 +348,7 @@ section.box {
   align-items: center;
   width: 100%;
   grid-area: burger;
-  padding-bottom: 15px;
+  padding-bottom: 80px;
 }
 
 .burger-arrow_wrapper {
@@ -397,7 +397,7 @@ section.box {
 }
 
 .about_avatar_img{
-  width: 50%;
+  width: 35%;
 
 }
 
@@ -610,7 +610,7 @@ margin: 15px 0;
   }
 }
 
-@media (min-width: 390px) and (max-width: 414px){
+/* @media (min-width: 390px) and (max-width: 414px){
 .burger_description{
   margin-bottom: 1.5em;
 
@@ -624,7 +624,7 @@ margin: 15px 0;
 
 }
 
-}
+} */
 
 /* FORMAT TABLET */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -796,7 +796,7 @@ p{
   }
 
   .about_avatar_img{
-    width: 40%;
+    width: 35%;
 
   }
 
