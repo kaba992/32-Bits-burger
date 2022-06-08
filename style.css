@@ -42,11 +42,10 @@ body::-webkit-scrollbar {
 
 p {
   font-family: 'Inter', sans-serif;
-  font-size: 0.90em;
+  font-size: 0.90rem;
   line-height: 1.5;
   letter-spacing: 0.1rem;
   color: #fff;
-  letter-spacing: 0.1rem;
 }
 
 a,
@@ -177,8 +176,8 @@ header {
 
 
 section.box {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -311,6 +310,7 @@ section.box {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: -6rem;
 }
 
 .burger_description_item {
@@ -348,7 +348,7 @@ section.box {
   align-items: center;
   width: 100%;
   grid-area: burger;
-  padding-bottom: 80px;
+  padding-bottom: 8rem;
 }
 
 .burger-arrow_wrapper {
@@ -505,7 +505,7 @@ margin: 15px 0;
 /* TRANSITION PAGES */
 .cont-bandes {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: transparent;
   display: flex;
   justify-content: center;
@@ -538,8 +538,8 @@ margin: 15px 0;
 
 
 .wipe-transition {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: url("./assets/images/background_transition.jpg") no-repeat center center / cover;
   position: absolute;
   left: -100%;
