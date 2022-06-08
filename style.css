@@ -796,7 +796,7 @@ p{
   }
 
   .about_avatar_img{
-    width: 35%;
+    width: 30%;
 
   }
 
@@ -819,11 +819,11 @@ p{
 }
 
   .réseaux_wrapper a i {
-    font-size: 6rem;
+    font-size: 4rem;
 }
 
   .deliveroo {
-    width: 6rem;
+    width: 4rem;
     height: auto;
 }
 
@@ -839,4 +839,18 @@ p{
     font-size: 1.90rem;
     text-align: center;
   }
+
+  .about_avatar_img{
+    width: 35%;
+
+  }
+
+  .réseaux_wrapper a i {
+    font-size: 6rem;
+}
+
+  .deliveroo {
+    width: 6rem;
+    height: auto;
+}
 }
