@@ -192,7 +192,7 @@ section.box {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("./assets/images/background_phone.jpg") no-repeat center center / contain;
+  background: url("./assets/images/background_phone.jpg") no-repeat center center / cover;
 }
 
 .svg-container {
@@ -235,7 +235,7 @@ section.box {
 .glitch {
   position: relative;
   font-family: 'VT323', monospace;
-  font-size: 2.3em;
+  font-size: 2.3rem;
   text-align: center;
   animation: glitch 1.5s linear infinite;
   width: fit-content;
@@ -538,8 +538,8 @@ margin: 15px 0;
 
 
 .wipe-transition {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: url("./assets/images/background_transition.jpg") no-repeat center center / cover;
   position: absolute;
   left: -100%;
@@ -630,7 +630,7 @@ margin: 15px 0;
 @media (min-width: 768px) and (max-width: 1024px) {
 
   p{
-    font-size: 1.7em;
+    font-size: 1.7rem;
   }
   #menu, #about, #contact {
     padding-top: 118px;
@@ -668,7 +668,7 @@ margin: 15px 0;
 
   .banne-price-wrapper {
     gap: 0 6rem;
-    margin-top: 2em;
+    margin-top: 2rem;
   }
 
   .price {
@@ -706,7 +706,7 @@ margin: 15px 0;
 @media screen and (min-width: 1024px) {
 
 p{
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
   .navbar_list{
@@ -777,13 +777,13 @@ p{
   }
 
   .glitch {
-    font-size: 5em;
+    font-size: 5rem;
   }
 
 
   .banne-price-wrapper {
     gap: 0 5rem;
-    margin-top: 2em;
+    margin-top: 2rem;
   }
 
   .price {
@@ -791,7 +791,7 @@ p{
   }
 
   .about-content p{
-    font-size: 1.90em;
+    font-size: 1.90rem;
     text-align: center;
   }
 
