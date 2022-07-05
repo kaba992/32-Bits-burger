@@ -75,6 +75,8 @@ arrow_right.addEventListener("click", () => {
 //ANIMATION BURGER MENU
 
 const hamburger = document.querySelector(".hamburger");
+const menu = document.querySelector(".menu");
+console.log(menu);
 
 TweenLite.set('.line01', { x: 40 });
 TweenLite.set('.line03', { x: -40 });
@@ -90,8 +92,20 @@ const hamburgerMotion = new TimelineMax()
   .reverse()
 
 hamburger.addEventListener('click', () => {
-  hamburgerMotion.reversed(!hamburgerMotion.reversed());
+  console.log(menu);
+
+  menu.classList.toggle('active');
+  if (menu.classList.contains('active')) {
+    hamburgerMotion.reversed(!hamburgerMotion.reversed());
+
+  } else {
+    hamburgerMotion.reversed(!hamburgerMotion.reversed());
+
+  }
+
+  // hamburgerMotion.play();
 });
+
 
 const allBandes = document.querySelectorAll('.bande');
 const wipe = document.querySelector('.wipe-transition');
@@ -111,8 +125,10 @@ const scrollLink = (e) => {
       TLAnim.fromTo(wipe, 0.5, { left: '0%', ease: Back.easeOut }, { left: '100%', ease: Back.easeOut });
       TLAnim.set(wipe, { left: '-100%', ease: Back.easeOut });
       hamburgerMotion.reversed(!hamburgerMotion.reversed());
-
+      menu.classList.remove('active');
+      menu.style.visibility = "hidden";
     });
+
   });
 }
 scrollLink(navLink);
@@ -128,7 +144,7 @@ for (let i = 0; i < slides.length; i++) {
   if (i != 0) { tl.addPause("Dot" + i) }
   if (i != slides.length - 1) {
     tl.to(slides[i], 0.5, { scale: .8, ease: Back.easeOut })
-      tl.to(slides[i], 0.7, { xPercent: -100}, 'L' + i)
+    tl.to(slides[i], 0.7, { xPercent: -100 }, 'L' + i)
       .from(slides[i + 1], 0.7, { xPercent: 100 }, 'L' + i)
       .from(slides[i + 1], 0.5, { scale: .8, ease: Back.easeIn })
   }
