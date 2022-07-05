@@ -190,7 +190,7 @@ section.box {
 	background: url("./assets/images/background_phone.jpg") no-repeat bottom
 		center / cover;
     height: 100%;
-    margin-top: -1.5rem;
+    /* margin-top: -1rem; */
 }
 
 .svg-container {
