@@ -3,7 +3,7 @@ const menuData = {
     {
       burger_names: "Cheese Super",
       burger_desc: [
-        "Potatoe bun généreux",
+        "Bun généreux",
         "Viande Aubrac bien fat",
         "Cheddar de l'enfer",
         "Emincé d'oignons",
@@ -11,8 +11,8 @@ const menuData = {
         "Ketchup-moutarde",
         "Poitrine de porc fumée"
       ],
-      price_simple: 9.5,
-      price_double: 10.5,
+      price_simple: 9.4,
+      price_double: 11,
       img: "./assets/images/glitchs_burgers/Classic_cheese_super-removebg.png"
     },
 
@@ -26,8 +26,8 @@ const menuData = {
         "Pickles",
         "Ketchup-moutarde"
       ],
-      price_simple: 9,
-      price_double: 10,
+      price_simple: 8.9,
+      price_double: 10.5,
       img: "./assets/images/glitchs_burgers/classic_cheese.png"
     },
 
@@ -42,28 +42,28 @@ const menuData = {
         "Ketchup-moutarde",
         "Poitrine de porc fumée et confite"
       ],
-      price_simple: 10,
-      price_double: 11,
+      price_simple: 9.9,
+      price_double: 11.5,
       img: "./assets/images/glitchs_burgers/Cheese_god-removebg.png"
     },
     {
       burger_names: "32 Bits.",
       burger_desc: [
-        "Pain brioché graines de sésame",
+        "Pain brioché grainé de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
         "Pickles",
         "Sauce saiya-jin"
       ],
-      price_simple: 10,
-      price_double: 11,
+      price_simple: 9.9,
+      price_double: 11.5,
       img: "./assets/images/glitchs_burgers/32_bit_burger-removebg.png"
     },
     {
       burger_names: "32 Bits. Super",
       burger_desc: [
-        "Pain brioché graines de sésame",
+        "Pain brioché grainé de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
@@ -71,14 +71,14 @@ const menuData = {
         "Poitrine de porc fumée",
         "Sauce saiya-jin"
       ],
-      price_simple: 10.5,
-      price_double: 11.5,
+      price_simple: 10.4,
+      price_double: 12,
       img: "./assets/images/glitchs_burgers/32_Bits_super.png"
     },
     {
       burger_names: "32 Bits. God",
       burger_desc: [
-        "Pain brioché graines de sésame",
+        "Pain brioché grainé de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
@@ -86,13 +86,14 @@ const menuData = {
         "Poitrine de porc fumée et confite",
         "Sauce kinto"
       ],
-      price_simple: 10.8,
-      price_double: 11.8,
+      price_simple: 10.9,
+      price_double: 12.5,
       img: "./assets/images/glitchs_burgers/32_Bits_God-removebg.png"
     },
     {
       burger_names: "Veggie Namek",
       burger_desc: [
+        "Pain brioché grainé de sésames",
         "Potatoe bun",
         "Genkidama de chèvre pané au riz soufflé",
         "Cheddar",
@@ -101,7 +102,7 @@ const menuData = {
         "Confit d'oignons",
         "Sauce saiya-jin"
       ],
-      price_simple: 10.5,
+      price_simple: 10.9,
       img: "./assets/images/glitchs_burgers/Veggiie_namek.png"
     }
   ],

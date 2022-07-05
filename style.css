@@ -71,7 +71,6 @@ header {
 	top: 0;
 	z-index: 1001;
 	width: 100%;
-  height: 100%;
 }
 
 #navbar {
@@ -381,6 +380,7 @@ section.box {
 	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: stretch;
+  overflow-y: auto;
 }
 
 .about-content {

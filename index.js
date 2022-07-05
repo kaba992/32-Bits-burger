@@ -165,7 +165,7 @@ function GO(e) {
   if (SD < 0) { tl.play() } else { tl.reverse() }
 }
 
-document.addEventListener("touchmove", GO);
+document.addEventListener("onscroll", GO);
 document.addEventListener("DOMMouseScroll", GO);
 document.onmousewheel = GO;
 
