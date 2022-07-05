@@ -509,7 +509,7 @@ section.box {
 /* TRANSITION PAGES */
 .cont-bandes {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background: transparent;
 	display: flex;
 	justify-content: center;
