@@ -19,13 +19,14 @@
 	margin: 0;
 }
 
-html,
-body {
+html {
 	height: 100vh;
 	width: 100vw;
 }
 
 body {
+  height: 100%;
+  width: 100%;
 	color: #fff;
 	background-color: var(--bg-color);
 	/* -ms-overflow-style: none; */
