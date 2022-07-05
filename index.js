@@ -46,7 +46,6 @@ const swipe = (direction) => {
     }
   } else {
     current_index = current_index - 1;
-    console.log("test");
     if (current_index < 0) {
       current_index = burger_size - 1;
     }
@@ -76,7 +75,7 @@ arrow_right.addEventListener("click", () => {
 
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
-console.log(menu);
+
 
 TweenLite.set('.line01', { x: 40 });
 TweenLite.set('.line03', { x: -40 });
@@ -92,7 +91,6 @@ const hamburgerMotion = new TimelineMax()
   .reverse()
 
 hamburger.addEventListener('click', () => {
-  console.log(menu);
 
   menu.classList.toggle('active');
   if (menu.classList.contains('active')) {
@@ -110,11 +108,22 @@ hamburger.addEventListener('click', () => {
 const allBandes = document.querySelectorAll('.bande');
 const wipe = document.querySelector('.wipe-transition');
 
-const navLink = document.querySelectorAll(".navbar_item_link");
 const mobLink = document.querySelectorAll(".mobile_menu_link");
+const navLink = document.querySelectorAll(".navbar_item_link");
+navLink.forEach((link) => {
+  link.addEventListener("click", () => {
+    hamburgerMotion.reversed(!hamburgerMotion.reversed());
+    menu.classList.remove('active');
+    menu.style.visibility = "hidden";
+  })
+})
+
+console.log(navLink);
+console.log(mobLink);
 
 // Navigation au click
 const scrollLink = (e) => {
+
   e.forEach((link, i) => {
     link.addEventListener("click", () => {
       //Permet de s'arreter à la slide souhaitée
@@ -127,6 +136,8 @@ const scrollLink = (e) => {
       hamburgerMotion.reversed(!hamburgerMotion.reversed());
       menu.classList.remove('active');
       menu.style.visibility = "hidden";
+
+
     });
 
   });
@@ -154,8 +165,9 @@ function GO(e) {
   if (SD < 0) { tl.play() } else { tl.reverse() }
 }
 
-document.addEventListener("mousewheel", GO);
+document.addEventListener("touchmove", GO);
 document.addEventListener("DOMMouseScroll", GO);
+document.onmousewheel = GO;
 
 /* a Pen by Diaco m.lotfollahi  : https://diacodesign.com */
 
