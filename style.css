@@ -201,6 +201,9 @@ section.box {
 .svg-container h1 {
 	display: none;
 }
+.svg-container h3{
+display: none;
+}
 
 /* SECTION MENU */
 #menu {
@@ -569,6 +572,7 @@ section.box {
 .bande {
 	width: calc(100% / 3);
 	height: 0%;
+  z-index: 500;
 }
 
 .bande:nth-child(n + 4) {
@@ -653,6 +657,10 @@ section.box {
 		top: 40%;
 		transform: translate(0, -50%);
 	}
+
+.drink-item h2{
+  font-size: 1.3rem;
+}
 }
 
 /* FORMAT TABLET */
@@ -682,6 +690,16 @@ section.box {
 	.bande:nth-child(n + 6) {
 		display: block;
 	}
+  .svg-container{
+    margin-top: -30px;
+  }
+
+  .svg-container h3{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3rem;
+  }
 
 	/* MENU SECTION*/
 	#menu {
@@ -711,10 +729,6 @@ section.box {
 	}
 
 	/*Drnks*/
-	#drinks {
-	}
-	.drink-wrapper {
-	}
 
 	/* CONTACT RESPONSIVE */
 	.réseaux_wrapper_test .réseaux_wrapper {
@@ -760,6 +774,13 @@ section.box {
 		background: url("./assets/images/background.png") no-repeat center bottom /
 			contain;
 	}
+
+  .svg-container h3{
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.3rem;
+  }
 
 	#menu,
 	#about,
