@@ -759,7 +759,7 @@ display: none;
 /* FORMAT DESKTOP */
 @media screen and (min-width: 1025px) {
 	p {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 	}
 
 	.navbar_list {
@@ -843,7 +843,7 @@ display: none;
 	}
 
 	.glitch {
-		font-size: 4rem;
+		font-size: 3.5rem;
 	}
 
 	.banne-price-wrapper {
@@ -855,12 +855,16 @@ display: none;
 		font-size: 3.5vw;
 	}
 
+  .drink-wrapper{
+    height: 70%;
+  }
+
 	.about-content p {
 		text-align: center;
 	}
 	.about-content h3 {
 		text-align: center;
-		font-size: 3.5rem;
+		font-size: 3rem;
 	}
 
 	.about_avatar_img {
