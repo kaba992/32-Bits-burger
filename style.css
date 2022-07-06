@@ -897,7 +897,7 @@ display: none;
 	}
 }
 
-@media screen and (min-width: 1450px) {
+@media screen and (min-width: 1600px) {
 	#home {
 		background: url("./assets/images/background.png") no-repeat center -120px / cover;
 	}

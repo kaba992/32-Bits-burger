@@ -222,3 +222,4 @@ function setTextAnimation(delay, duration, strokeWidth, timingFunction, strokeCo
 setTextAnimation(0.1, 6, 1, 'ease-in-out', '#ffffff', false);
 
 TLAnim.from(".svg-container", 1.5, { y: "-100%", opacity: 0, scale: 0, ease: Back.easeOut })
+  .from(".svg-home-h3", 1.5, { y: "100%", opacity: 0, scale: 0, ease: Back.easeOut })

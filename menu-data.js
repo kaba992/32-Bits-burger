@@ -4,7 +4,7 @@ const menuData = {
     {
       burger_names: "Classic Cheese",
       burger_desc: [
-        "Potatoe bun généreux",
+        "Bun généreux",
         "Viande Aubrac bien fat",
         "Cheddar de l'enfer",
         "Emincé d'oignons",
@@ -33,7 +33,7 @@ const menuData = {
     {
       burger_names: "Cheese God",
       burger_desc: [
-        "Potatoe bun généreux",
+        "Bun généreux",
         "Viande Aubrac bien fat",
         "Cheddar de l'enfer",
         "Emincé d'oignons",
@@ -48,7 +48,7 @@ const menuData = {
     {
       burger_names: "32 Bits.",
       burger_desc: [
-        "Pain brioché grainé de sésames",
+        "Pain brioché graines de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
@@ -62,7 +62,7 @@ const menuData = {
     {
       burger_names: "32 Bits. Super",
       burger_desc: [
-        "Pain brioché grainé de sésames",
+        "Pain brioché graines de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
@@ -77,7 +77,7 @@ const menuData = {
     {
       burger_names: "32 Bits. God",
       burger_desc: [
-        "Pain brioché grainé de sésames",
+        "Pain brioché graines de sésames",
         "Viande Aubrac smashée aux oignons",
         "Cheddar",
         "Sucrine",
@@ -92,11 +92,11 @@ const menuData = {
     {
       burger_names: "Veggie Namek",
       burger_desc: [
-        "Pain brioché grainé de sésames",
-        "Potatoe bun",
+        "Pain brioché graines de sésames",
         "Genkidama de chèvre pané",
         "Cheddar",
-        "Sucrine et tomates",
+        "Sucrine",
+        "Tomates",
         "Confit d'oignons",
         "Sauce saiya-jin"
       ],
@@ -144,17 +144,17 @@ const menuData = {
     drink_qty: "33 cl"
   },
   {
-    drink_name: "Bière locale Condor(blonde)",
+    drink_name: "Bière locale Condor (blonde)",
     drink_price: 5.5,
     drink_qty: "33cl"
   },
   {
-    drink_name: "Bière locale Bower Bird(IPA)",
+    drink_name: "Bière locale Bower Bird (IPA)",
     drink_price: 5.5,
     drink_qty: "33 cl"
   },
   {
-    drink_name: "Bière locale Garde-Fou(ambrée)",
+    drink_name: "Bière locale Garde-Fou (ambrée)",
     drink_price: 5.5,
     drink_qty: "33 cl"
   },
