@@ -19,13 +19,13 @@
 	margin: 0;
 }
 
-html,body {
+html,
+body {
 	height: 100%;
 	width: 100%;
 }
 
 body {
-
 	color: #fff;
 	background-color: var(--bg-color);
 	/* -ms-overflow-style: none; */
@@ -69,7 +69,7 @@ svg {
 header {
 	position: fixed;
 	top: 0;
-	z-index: 1001;
+	z-index: 10;
 	width: 100%;
 }
 
@@ -120,7 +120,7 @@ header {
 	height: 100vh;
 	background-color: rgb(0, 0, 0);
 	visibility: hidden;
-  opacity: 0;
+	opacity: 0;
 	z-index: 1;
 }
 
@@ -148,7 +148,7 @@ header {
 }
 
 .mobile_menu_link {
-	font-size: 3rem;
+	font-size: 4rem !important;
 	color: #fff;
 	text-decoration: none;
 	font-family: "Inter", sans-serif;
@@ -189,8 +189,8 @@ section.box {
 	align-items: center;
 	background: url("./assets/images/background_phone.jpg") no-repeat bottom
 		center / cover;
-    height: 100%;
-    /* margin-top: -1rem; */
+	height: 100%;
+	/* margin-top: -1rem; */
 }
 
 .svg-container {
@@ -370,6 +370,40 @@ section.box {
 	padding: 0 15px;
 }
 
+/* SECTION Drinks */
+#drinks {
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+.drink-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 75%;
+	width: 100%;
+
+}
+
+.drink-title {
+	margin-top: 110px;
+
+	text-align: center;
+  width:100%;
+	font-size: 3rem;
+}
+
+.drink-item {
+	height: 150px;
+	width: 380px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 /* SECTION ABOUT */
 
 #about {
@@ -380,7 +414,7 @@ section.box {
 	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: stretch;
-  overflow-y: auto;
+	overflow-y: auto;
 }
 
 .about-content {
@@ -610,16 +644,15 @@ section.box {
 	}
 }
 
-@media(max-width: 389px){
-
-#about{
-  position: relative;
-}
-.svg-container{
-  position: absolute;
-  top: 40%;
-  transform: translate(0, -50%);
-}
+@media (max-width: 389px) {
+	#about {
+		position: relative;
+	}
+	.svg-container {
+		position: absolute;
+		top: 40%;
+		transform: translate(0, -50%);
+	}
 }
 
 /* FORMAT TABLET */
@@ -675,6 +708,12 @@ section.box {
 
 	.about_avatar_img {
 		width: 40%;
+	}
+
+	/*Drnks*/
+	#drinks {
+	}
+	.drink-wrapper {
 	}
 
 	/* CONTACT RESPONSIVE */
@@ -834,8 +873,7 @@ section.box {
 
 @media screen and (min-width: 1450px) {
 	#home {
-		background: url("./assets/images/background.png") no-repeat center center /
-			cover;
+		background: url("./assets/images/background.png") no-repeat center -120px / cover;
 	}
 	.about-content p {
 		font-size: 1.9rem;

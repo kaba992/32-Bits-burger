@@ -1,20 +1,5 @@
 const menuData = {
   burgers: [
-    {
-      burger_names: "Cheese Super",
-      burger_desc: [
-        "Bun généreux",
-        "Viande Aubrac bien fat",
-        "Cheddar de l'enfer",
-        "Emincé d'oignons",
-        "Pickles",
-        "Ketchup-moutarde",
-        "Poitrine de porc fumée"
-      ],
-      price_simple: 9.4,
-      price_double: 11,
-      img: "./assets/images/glitchs_burgers/Classic_cheese_super-removebg.png"
-    },
 
     {
       burger_names: "Classic Cheese",
@@ -30,7 +15,21 @@ const menuData = {
       price_double: 10.5,
       img: "./assets/images/glitchs_burgers/classic_cheese.png"
     },
-
+    {
+      burger_names: "Cheese Super",
+      burger_desc: [
+        "Bun généreux",
+        "Viande Aubrac bien fat",
+        "Cheddar de l'enfer",
+        "Emincé d'oignons",
+        "Pickles",
+        "Ketchup-moutarde",
+        "Poitrine de porc fumée"
+      ],
+      price_simple: 9.4,
+      price_double: 11,
+      img: "./assets/images/glitchs_burgers/Classic_cheese_super-removebg.png"
+    },
     {
       burger_names: "Cheese God",
       burger_desc: [
@@ -95,10 +94,9 @@ const menuData = {
       burger_desc: [
         "Pain brioché grainé de sésames",
         "Potatoe bun",
-        "Genkidama de chèvre pané au riz soufflé",
+        "Genkidama de chèvre pané",
         "Cheddar",
-        "Sucrine",
-        "Tomates",
+        "Sucrine et tomates",
         "Confit d'oignons",
         "Sauce saiya-jin"
       ],
@@ -113,37 +111,37 @@ const menuData = {
   drinks: [{
     drink_name: "Eau minérale",
     drink_price: 2.5,
-    drink_qty: "50cl"
+    drink_qty: "50 cl"
   },
   {
     drink_name: "Eau pétillante",
     drink_price: 2.5,
-    drink_qty: "50cl"
+    drink_qty: "50 cl"
   },
   {
-    drink_name: "Coca",
+    drink_name: "Coca-cola",
     drink_price: 2.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
-    drink_name: "Coca Zéro",
+    drink_name: "Coca-Zéro",
     drink_price: 2.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
-    drink_name: "Ice Tea",
+    drink_name: "Ice-Tea",
     drink_price: 2.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
     drink_name: "Orangina",
     drink_price: 2.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
     drink_name: "Bière Blonde Estrella",
     drink_price: 3.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
     drink_name: "Bière locale Condor(blonde)",
@@ -153,17 +151,17 @@ const menuData = {
   {
     drink_name: "Bière locale Bower Bird(IPA)",
     drink_price: 5.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
     drink_name: "Bière locale Garde-Fou(ambrée)",
     drink_price: 5.5,
-    drink_qty: "33cl"
+    drink_qty: "33 cl"
   },
   {
     drink_name: "Bière Locale du Moment",
     drink_price: 5.5,
-    drink_qty: null
+    drink_qty: "33 cl",
   }
   ]
 }

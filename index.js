@@ -15,8 +15,31 @@ const priceAnim = document.querySelectorAll(".banne-price-wrapper .price");
 let burgers_arr = [];
 burgers_arr = menuData.burgers;
 
+let drinks_arr = [];
+drinks_arr = menuData.drinks;
+
 let current_index = 0;
 
+// Drinks injection
+const drinksDiv = document.querySelector("#drinks");
+let div = document.createElement("div");
+div.classList.add("drink-wrapper");
+
+for (let i = 0; i < drinks_arr.length; i++) {
+  const element = drinks_arr[i];
+  console.log(i);
+  div.innerHTML += `<div class="drink-item" id="drink${i}">
+                     <h2 class="drink-name">${element.drink_name}</h2>
+                     <p class="drink-price">${element.drink_qty}</p>
+                     <p class="drink-cl">${element.drink_price} €</p>
+                     </div>`;
+
+}
+
+drinksDiv.appendChild(div);
+
+
+// chargement contenu burgers dans le html
 function refresh() {
   burger_title.innerHTML = burgers_arr[current_index].burger_names;
   burger_title.setAttribute("title", `${burger_title.innerHTML}`);
@@ -34,24 +57,30 @@ const menuAnim = () => {
   TLAnim.from(priceAnim, { opacity: 0, ease: Back.easeOut }, "<0.5");
 }
 
-
+let sliding = false;
 const swipe = (direction) => {
 
   let burger_size = burgers_arr.length;
-
+  if (sliding) {
+    return;
+  }
+  sliding = true;
   if (direction === 'right') {
-    current_index = current_index + 1;
+    current_index += 1;
     if (current_index >= burger_size) {
       current_index = 0;
     }
   } else {
-    current_index = current_index - 1;
+    current_index -= 1;
     if (current_index < 0) {
       current_index = burger_size - 1;
     }
   }
-  refresh();
   menuAnim();
+  setTimeout(() => sliding = false, 2000);
+  console.log(sliding);
+  refresh();
+
 
   const emptyPrice = document.querySelector(".price2");
   if (price_double.innerHTML === "") {
@@ -71,6 +100,8 @@ arrow_right.addEventListener("click", () => {
 
 });
 
+
+
 //ANIMATION BURGER MENU
 
 const hamburger = document.querySelector(".hamburger");
@@ -83,11 +114,11 @@ TweenLite.set('.navigation', { xPercent: -50, yPercent: -50 })
 TweenLite.set('.navigation li', { x: "-100%" });
 
 const hamburgerMotion = new TimelineMax()
-  .to('.line03', 0.4, { x: '-=40' }, 0)
-  .to('.line01', 0.4, { x: '+=40' }, 0)
+  .to('.line03', 0.4, { x: '-=50' }, 0)
+  .to('.line01', 0.4, { x: '+=50' }, 0)
   .to('.menu', 0.4, { autoAlpha: 1 }, 0)
   .staggerTo('.navigation li', 0.4, { x: 0, ease: Sine.easeOut }, 0.2, 0.5)
-  .to('.navigation li', 1, { marginBottom: '40px', ease: Power1.easeOut })
+  .to('.navigation li', 1, { marginBottom: '50px', ease: Power1.easeOut })
   .reverse()
 
 hamburger.addEventListener('click', () => {
